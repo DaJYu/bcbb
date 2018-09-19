@@ -1,0 +1,77 @@
+.divcanvas {
+    margin-top: -120px;
+    display: none;
+}
+.block {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sliderContainer {
+  position: relative;
+  text-align: right;
+  /*width: 310px;*/
+  height: 33px;
+  line-height: 30px;
+  margin-top: 15px;
+  background: #f7f9fa;
+  color: #45494c;
+  border: 1px solid #e4e7eb;
+  border-radius: 15px !important;
+}
+#msg{
+  display: none;
+}
+.sliderText {
+    font-size: 10px;
+    font-family: FZLTKHK--GBK1-0;
+    font-weight: 400;
+    color: rgba(187,187,187,1);
+    margin-right: 12px;
+}
+
+.sliderContainer_success .sliderIcon {
+  background: url(../images/slider_valid.png);
+  /*background-position: 0 0 !important;*/
+}
+.sliderContainer_fail .sliderIcon {
+  background: url(../images/slider_invalid.png);
+  /*top: 14px;
+  background-position: 0 -82px !important;*/
+}
+.sliderContainer_active .sliderText, .sliderContainer_success .sliderText, .sliderContainer_fail .sliderText {
+  display: none;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*width: 100%;
+  height: 30px;*/
+  /*background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background .2s linear;*/
+}
+
+.sliderIcon {
+  position: absolute;
+  /*top: -5px;*/
+  /*left: 0;*/
+  width: 72px;
+  height: 32px;
+  background: url(../images/slider.png);
+  /*background-size: 34px 471px;*/
+}
+
+.refreshIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  background: url(http://cstaticdun.126.net//2.6.3/images/icon_light.f13cff3.png) 0 -437px;
+  background-size: 34px 471px;
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+    <meta charset="utf-8">
+    <title>编程宝贝-图形化编程创作中心</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Fonts START -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Global styles END -->
+    <!-- Page level plugin styles BEGIN -->
+    <link href="../assets/pages/css/animate.css" rel="stylesheet">
+    <link href="../assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+    <!-- Page level plugin styles END -->
+    <!-- Theme styles BEGIN -->
+    <link href="../assets/pages/css/components.css" rel="stylesheet">
+    <link href="../assets/pages/css/slider.css" rel="stylesheet">
+    <link href="../assets/onepage/css/style.css" rel="stylesheet">
+    <link href="../assets/onepage/css/style-responsive.css" rel="stylesheet">
+    <link href="../assets/onepage/css/themes/blue.css" rel="stylesheet" id="style-color">
+    <link href="../assets/onepage/css/custom.css" rel="stylesheet">
+    <link href="../style/creative-centre.css" rel="stylesheet">
+    <link href="../style/calendar.css" rel="stylesheet">
+    <link href="../style/jigsaw.css" rel="stylesheet">
+    <link href="../style/pageNav.css" rel="stylesheet">
+    <!-- Theme styles END -->
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+<body class="menu-always-on-top" style="
+background: url(.../images/bj1.png) no-repeat center 0 #fff;
+background-size: 100%;
+/* background: #fff; */
+">
+<!-- END BEGIN STYLE CUSTOMIZER -->
+<img src="../images/bj1.png" style="width: 100%;height: 324px;" id="promo-block">
+<!-- Header BEGIN -->
+<div class="header header-mobi-ext">
+    <div class="container">
+        <div class="header-con">
+            <!-- Logo BEGIN -->
+            <div class="log">
+                <a  href="../"><img src="../assets/onepage/img/logo/bcbb-logo.png"></a>
+            </div>
+            <!-- Logo END -->
+            <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+            <!-- Navigation BEGIN -->
+            <div class="ite">
+                <ul class="header-navigation">
+                    <li><a href="../">首页</a></li>
+                    <li><a href="../course">课程介绍</a></li>
+                    <li><a href="../teaching_model">教学模式</a></li>
+                    <li><a href="../creative_centre">创作中心</a></li>
+
+                    <li class="zc"><a href="#">登录&nbsp;|&nbsp;注册</a></li>
+                    <li class="txlg"><img src="../images/t1.jpg" class="txlg-img" id="txlg-img"></li>
+                </ul>
+            </div>
+            <!-- Navigation END -->
+        </div>
+    </div>
+</div>
+<!-- Header END -->
+
+
+<!--  BEGIN-->
+<div class="modal-fade" id="zhzcdl">
+    <div class="kd container sjhxg">
+        <span class="glyphicon glyphicon-remove" id="zc-gb"></span>
+        <div class="sjhxg-con">
+            <!-- BEGIN -->
+            <div class="jcbd" id="sjzc-sjhzc">
+                <h2>手机号注册</h2>
+                <div class="sjhxg-con-jb">
+                    <p>手机号</p>
+                    <div class="sjhxg-con-jb-sj">
+                        <label class="sjhxg-con-jb-sj-lb">+86</label><label><input type="tel" name="" placeholder="请输手机号" id="sjzc-sjh"></label>
+                    </div>
+                    <div class="tpyz">
+                        <div id="captcha"></div>
+                        <input id="msg"></input>
+                    </div>
+                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('#sjzc-yzm')">获取验证码</button></label></div>
+                    <div class="mmsz"><input type="password" name="" placeholder="请设置您的登录密码" id="yhmm"><img src="../images/look.png"></div>
+                    <input type="" name="" id="sjzc-ts" readonly="readonly">
+                </div>
+                <div class="sjhxg-con-xyb" id="sjzc">注册</div>
+                <p id="qdl">已有账号,去登录></p>
+                <div class="zc-wxsm">
+                    <img src="../images/weixin-tb.png">
+                    <p>微信扫码注册</p>
+                </div>
+            </div>
+            <!-- END -->
+            <div class="jcbd" id="wxh-zc" style="display: none;">
+                <h2>微信号注册</h2>
+                <div class="sjhxg-con-jb img">
+                    <img src="../images/weixin.png">
+                    <p>请打开微信扫一扫</p>
+                </div>
+                <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div>
+                <p id="ysjhzc">手机号注册</p>
+            </div>
+            <!-- BEGIN -->
+            <div class="wcbd" id="sjzc-wc">
+                <h2>完成注册</h2>
+                <div class="sjhxg-con-jb img">
+                    <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                    <input type="" name="" id="wcts" readonly="readonly">
+                </div>
+                <div class="sjhxg-con-xyb xyb-sjwc" id="sjzc-qws">去完善</div>
+            </div>
+            <!-- END -->
+        </div>
+    </div>  
+</div>
+<!--END  -->
+
+<!--  BEGIN-->
+<div class="kd container">
+    <div class="grtx">
+        <div>
+            <div class="grtx-rqjf"><label><span>人气</span><br><span id="grtx-rq"></span></label><label><span>积分</span><br><span id="grtx-jf">223</span></label></div>
+            <div class="grtx-fsdz"><label><span>粉丝</span><br><span id="grtx-fx">223</span></label><label><span>点赞</span><br><span id="grtx-dz">223</span></label></div>
+            <label class="xgtx"><img src="" class="grtx-img" id="grtx-tx">
+                <label class="user"><div class="user-pic">修改头像</div></label>
+            </label>
+            <div  class="modal-fade" id="grtxbj">
+               <div class="kd container modal-txxg">
+                   <h2>头像修改</h2>
+                   <div class="modal-txxg-tb">
+                       <div class="modal-txxg-tb-sc">
+                           <img src="" class="grtx-img" id="avarimgs">
+                           <div class="modal-txxg-tb-bdsc">
+                            <span>本地上传</span>
+                            <input type="file" name="pclogo" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="modal-txxg-tb-tj">
+                       <p>推荐头像</p>
+                       <ul>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                       </ul>
+                   </div>
+               </div>
+               <span class="modal-txxg-txbc">保存</span><br><span class="modal-txxg-qxxg">取消</span>
+           </div>
+       </div>
+   </div>
+   <p id="grtx-nc"></p>
+   <span id="grtx-qm"></span><br>
+   <a href="#"><img src="../images/kscz-btn.png" class="grtx-kscz"></a>
+</div>
+</div>
+
+<!-- BEGIN FOOTER -->
+<div class="works-center">
+    <div class="kd container">
+        <ul class="works-selt">
+            <li class="cur" id="grzp"><a href="#all" data-toggle="tab">我的作品</a></li>
+            <li id="sczp"><a href="#jxzp" data-toggle="tab">收藏作品</a></li>
+            <li id="grzl"><a href="#rmzp" data-toggle="tab">个人资料</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="kd container" id="grqk">
+            <ul class="zpfbqk">
+                <li class="yfb xz">以发布作品</li>
+                <li class="wfb">未发布作品</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-1">
+        <div class="kd container">
+            <div class="row content-zp"></div>
+            <footer id="pages"></footer>
+        </div>  
+        <div class="kd container content-grzl">
+            <div class="content-title">                
+                <h3>基本资料</h3>
+            </div>
+            <!-- jczl-xg BEGIN-->
+            <div class="content-jczl" id="jczl-xg">
+                <div class="content-jczl-jbxx">
+                    <div class="content-jczl-jbxx-lab"><label class="jbxx-title"><span>*</span>昵称</label><label class="jbxx-cont"><input placeholder="请输入昵称" type="" name="" id="jbsjxx-nc"></label></div>
+                    <div class="content-jczl-jbxx-lab"><label class="jbxx-title"><span>*</span>真实姓名</label><label class="jbxx-cont"><input placeholder="请输入真实姓名" type="" name="" id="jbsjxx-xm"></label></div>
+                    <div class="content-jczl-jbxx-lab">
+                        <label class="jbxx-title"><span>*</span>出生日期</label><label class="jbxx-cont" style="width: 328px;"><input placeholder="请选择出生日期" type="text" name="date" onClick="laydate()" id="jbsjxx-csrq"></label>
+                        <label>性别</label><label class="jbxx-cont" style="width: 119px"><select name="sex" id="sex" style="width: 100%">
+                            <option value="0">请选性别</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select></label>
+                    </div>
+                    <div class="content-jczl-jbxx-lab"><label class="jbxx-title"><span>*</span>地区</label>
+                        <label class="jbxx-cont">
+                            <select name="province" id="province">
+                            </select>
+                            <select name="city" id="city">
+                            </select>
+                            <select name="county" id="county">
+                            </select>
+                        </label></div>
+                        <div class="content-jczl-jbxx-lab">
+                            <label class="jbxx-title"><span>*</span>所在学校</label><label class="jbxx-cont" style="width: 328px;"><input placeholder="请输入所在学校" type="" name="" id="jbsjxx-xx"></label>
+                            <label class="jbxx-cont" style="width: 119px"><select name="nj" id="jbsjxx-nj" style="margin-left: 5px;">
+                                <option value="0">请选年级</option>
+                                <option value="一年级">一年级</option>
+                                <option value="二年级">二年级</option>
+                                <option value="三年级">三年级</option>
+                                <option value="四年级">四年级</option>
+                                <option value="五年级">五年级</option>
+                                <option value="六年级">六年级</option>
+                            </select></label>
+                        </div>
+                        <div class="content-jczl-jbxx-lab"><div style="float:left;"><label class="jbxx-title">我的签名</label></div><label class="jbxx-cont"><textarea placeholder="请设计您的个性签名～" class="ux-textarea" id="jbsjxx-qm"></textarea></label></div>
+                        <div class="content-jczl-jbxx-lab"><label class="jbxx-title">编程年龄</label><label class="jbxx-cont">
+                            <select name="year" id="jbsjxx-bcn">
+                                <option value="0">请选年</option>
+                                <option value="一年">一年</option>
+                                <option value="二年">二年</option>
+                                <option value="三年">三年</option>
+                                <option value="四年">四年</option>
+                                <option value="五年">五年</option>
+                                <option value="六年">六年</option>
+                            </select>
+                            <select name="mouth" id="jbsjxx-bcy">
+                                <option value="0">请选月</option>
+                                <option value="一个月">一个月</option>
+                                <option value="二个月">二个月</option>
+                                <option value="三个月">三个月</option>
+                                <option value="四个月">四个月</option>
+                                <option value="五个月">五个月</option>
+                                <option value="六个月">六个月</option>
+                                <option value="七个月">四个月</option>
+                                <option value="五个月">五个月</option>
+                                <option value="六个月">六个月</option>
+                            </select>
+                        </label></div>
+                        <div class="content-jczl-jbxx-lab"><label class="jbxx-title"></label><label class="jbxx-cont"><div class="content-btn" id="zlbc">保存</div></label></div>
+                    </div>
+                </div>
+                <!-- END -->
+                <!--jczl-xs  BEGIN-->
+                <div class="content-jczl" id="jczl-xs">
+                    <div class="content-jczl-jbxx">
+                        <div class="content-jczl-jbxx-lab"><label class="jbxx-title label-xs">昵称:</label><label class="jbxx-conts"><input placeholder="" type="" name="" id="jczlxs-nc" readonly="readonly"></label></div>
+                        <div class="content-jczl-jbxx-lab"><label class="jbxx-title label-xs">真实姓名:</label><label class="jbxx-conts"><input placeholder="" type="" name="" id="jczlxs-xm" readonly="readonly"></label></div>
+                        <div class="content-jczl-jbxx-lab jbxx-lab-xbk">
+                            <label class="jbxx-title label-xs">出生日期:</label><label class="jbxx-conts"><input placeholder="" type="" name="" id="jczlxs-csrq" readonly="readonly"></label>
+                            <label class="label-xs">性别:</label><label class="jbxx-conts" style="width: 119px"><input type="" name="" id="jczlxs-xb" readonly="readonly"></label>
+                        </div>
+                        <div class="content-jczl-jbxx-lab"><label class="jbxx-title label-xs">地区:</label>
+                            <label class="jbxx-conts">
+                                <input type="" name="" id="jczlxs-sf" readonly="readonly" style="width: 100px">
+                                <input type="" name="" id="jczlxs-sq" readonly="readonly"  style="width: 100px">
+                                <input type="" name="" id="jczlxs-qx" readonly="readonly"  style="width: 200px">
+                            </label></div>
+                            <div class="content-jczl-jbxx-lab jbxx-lab-xbk">
+                                <label class="jbxx-title label-xs">所在学校:</label><label class="jbxx-conts">
+                                    <input type="" name="" id="jczlxs-xxxs" readonly="readonly"  style="width: 300px">
+                                    <input placeholder="" type="" name="" id="jczlxs-xuex" readonly="readonly">
+                                    <input type="" name="" id="jczlxs-nj" readonly="readonly"></label>
+                                </div>
+                                <div class="content-jczl-jbxx-lab jbxx-lab-xbk"><div style="float:left;"><label class="jbxx-title label-xs">我的签名:</label></div><label class="jbxx-conts"><textarea placeholder="" class="ux-textarea" id="jczlxs-qm" disabled></textarea></label></div>
+                                <div class="content-jczl-jbxx-lab"><label class="jbxx-title label-xs">编程年龄:</label><label class="jbxx-conts">
+                                    <input type="" name="" id="jczlxs-bcn" readonly="readonly" style="width: 40px">
+                                    <input type="" name="" id="jczlxs-bcy" readonly="readonly">
+                                </label></div>
+                                <div class="content-jczl-jbxx-lab"><label class="jbxx-title"></label><label class="jbxx-cont"><div class="content-btn" id="zlxg">修改</div></label></div>
+                            </div>
+                        </div>           
+                        <!-- END -->
+
+                        <div class="content-title">                
+                            <h3>安全信息</h3>
+                        </div>
+                        <div class="content-jczl">
+                            <div class="content-jczl-aq">
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>常用手机&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-cysj" readonly="readonly"></label><div class="aq-bdxg" id="sjh"></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>微信&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-wx" readonly="readonly"></label><div class="aq-bdxg" id="wxh"></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title">Q&nbsp;Q&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-qq" readonly="readonly"></label><div class="aq-bdxg" id="qqh"></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title">微博&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-wb" readonly="readonly"></label><div class="aq-bdxg" id="wbh"></div></div>
+                                <!-- <div class="content-jczl-jbxx-anq"><label class="jbxx-title">邮箱&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-yx"></label><div class="aq-bdxg"></div>立即绑定</div> -->
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>登录密码&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-mm" readonly="readonly"></label><div class="aq-bdxg" id="zhmm">修改</div></div>
+                            </div>
+                        </div>
+
+                        <!--modal  BEGIN 手机号更换-->
+                        <div  class="modal-fade" id="ggxjh">
+                            <div class="kd container sjhxg">
+                                <div class="sjhxg-con">
+                                    <div style="height: 50px">
+                                       <ul>
+                                        <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
+                                        <li class="two"><div class="">2</div></li>
+                                        <li class="three"><div class="">3</div></li>
+                                    </ul> 
+                                </div>
+                                <!-- BEGIN -->
+                                <div class="jcbd" id="jcsjbd">
+                                    <h2>解除绑定</h2>
+                                    <div class="sjhxg-con-jb">
+                                        <p>手机号</p>
+                                        <div class="sjhxg-con-jb-sj">
+                                            <label class="sjhxg-con-jb-sj-lb">+86</label><label><input type="tel" name="" placeholder="请输入原手机号" id="ysjh"></label>
+                                        </div>
+                                        <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="ysjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="jbsj-hqyzm">获取验证码</button></label></div>
+                                        <input type="" name="" id="ysjhts" readonly="readonly">
+                                    </div>
+                                    <div class="sjhxg-con-xyb xyb-sjjb">下一步</div>
+                                </div>
+                                <!--END  -->
+                                <!-- BEGIN -->
+                                <div class="bdxh" id="bdxsj">
+                                    <h2>绑定新手机号</h2>
+                                    <div class="sjhxg-con-jb">
+                                        <p>手机号</p>
+                                        <div class="sjhxg-con-jb-sj">
+                                            <label class="sjhxg-con-jb-sj-lb">+86</label><label><input type="tel" name="" placeholder="请输手机号" id="xsjh"></label>
+                                        </div>
+                                        <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="xsjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="bdsj-hqyzm">获取验证码</button></label></div>
+                                        <input type="" name="" id="xsjhts" readonly="readonly">
+                                    </div>
+                                    <div class="sjhxg-con-xyb xyb-sjxb">下一步</div>
+                                </div>
+                                <!-- END -->
+                                <!-- BEGIN -->
+                                <div class="wcbd" id="wcsjbd">
+                                    <h2>完成绑定</h2>
+                                    <div class="sjhxg-con-jb img">
+                                        <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                                        <input type="" name="" id="wcts" readonly="readonly">
+                                    </div>
+                                    <div class="sjhxg-con-xyb xyb-sjwc" id="wc-btn">完成</div>
+                                </div>
+                                <!-- END -->
+                                <p id="sjh-qx">取消更换</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+
+
+                    <!--modal  BEGIN 微信号更换-->
+                    <div  class="modal-fade" id="ghwxh">
+                        <div class="kd container sjhxg">
+                            <div class="sjhxg-con">
+                                <div style="height: 50px">
+                                   <ul>
+                                    <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
+                                    <li class="two"><div class="">2</div></li>
+                                    <li class="three"><div class="">3</div></li>
+                                </ul> 
+                            </div>
+                            <!-- BEGIN -->
+                            <div class="jcbd" id="wxh-jcbd">
+                                <h2>解除绑定</h2>
+                                <div class="sjhxg-con-jb img">
+                                    <img src="../images/weixin.png">
+                                    <p>请打开微信扫一扫</p>
+                                </div>
+                                <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div>
+                            </div>
+                            <!--END  -->
+                            <!-- BEGIN -->
+                            <div class="bdxh" id="wxh-cxbd">
+                                <h2>绑定新微信号</h2>
+                                <div class="sjhxg-con-jb img">
+                                    <img src="../images/weixin.png">
+                                    <p>请用新微信号扫描</p>
+                                </div>
+                                <div class="sjhxg-con-xyb top xyb-wxxb" id="wxh-bd">下一步</div>
+                            </div>
+                            <!-- END -->
+                            <!-- BEGIN -->
+                            <div class="wcbd" id="wxh-wcbd">
+                                <h2>完成绑定</h2>
+                                <div class="sjhxg-con-jb img">
+                                    <img src="../images/duihao.png"><br>
+                                    <input type="" name="" id="wcts" readonly="readonly">
+                                </div>
+                                <div class="sjhxg-con-xyb xyb-wxwc" id="wc-">完成</div>
+                            </div>
+                            <!-- END -->
+                            <p class="gb wxh-qx" id=wxh-qx">取消更换</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END -->
+
+            </div>       
+        </div>
+    </div>
+    <!-- Promo block END -->
+
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- BEGIN COPYRIGHT -->
+                <div class="text-center">
+                    <p class="powered" style="color: #fff;">Copyright &copy; 2018 编程宝贝</p>
+                </div>
+                <!-- END COPYRIGHT -->
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <a href="#promo-block" class="go2top scroll"><i class="fa fa-arrow-up"></i></a>
+
+<!--[if lt IE 9]>
+<script src="assets/plugins/respond.min.js"></script>
+<![endif]-->
+<!-- Load JavaScripts at the bottom, because it will reduce page load time -->
+<!-- Core plugins BEGIN (For ALL pages) -->
+<script src="../assets/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- Core plugins END (For ALL pages) -->
+<!-- Core plugins BEGIN (required only for current page) -->
+<script src="../assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+<script src="../assets/plugins/jquery.easing.js"></script>
+<script src="../assets/plugins/jquery.parallax.js"></script>
+<script src="../assets/plugins/jquery.scrollTo.min.js"></script>
+<script src="../assets/onepage/scripts/jquery.nav.js"></script>
+<!-- Core plugins END (required only for current page) -->
+<!-- Global js BEGIN -->
+<script src="../assets/onepage/scripts/layout.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/bs-carousel.js" type="text/javascript"></script>
+<script src="../js/pccs.js" type="text/javascript"></script>
+<script src="../js/personal.js" type="text/javascript"></script>
+<script src="../js/calendar.js" type="text/javascript"></script>
+<script src="../js/jigsaw.js" type="text/javascript"></script>
+<script src="../js/pageNav.js" type="text/javascript"></script>
+<script src="../js/works.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function() {
+        Layout.init();
+    });
+</script>
+</script>
+<!-- Global js END -->
+</body>
+</html>

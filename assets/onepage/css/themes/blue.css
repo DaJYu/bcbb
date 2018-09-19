@@ -1,0 +1,98 @@
+a, a:focus, a:hover, a:active {
+  /*color:  #39a5ef;*/
+}
+a:hover {
+  color:  #39a5ef;
+}
+::-moz-selection {
+  color: #fff;
+  background: #39a5ef;
+}
+::selection {
+  color: #fff;
+  background: #39a5ef;
+}
+.header-navigation a:hover,
+.header-navigation li.current a {
+  /*color:  #39a5ef;*/
+}
+.tb-socio .fa:hover {
+  color:  #39a5ef;
+  border: solid 1px #39a5ef;
+}
+.carousel-indicators li.active {
+  background: #39a5ef;
+}
+.go2top:hover {
+  border: solid 2px #39a5ef;
+  color:  #39a5ef;
+}
+.content h1 strong, .content h2 strong, .content h3 strong, .content h4 strong {
+  color:  #39a5ef;
+}
+.slider-item-1 .large_bold_white span,
+.slider-item-2 .large_bold_white span {
+  color:  #39a5ef;
+}
+.tp-caption a {
+    color:  #39a5ef;
+}
+.services-block .fa {
+  background: #39a5ef;
+}
+.services-block .fa:after {
+  border-top: 9px solid #39a5ef;
+}
+.team-block em {
+  color:  #39a5ef;
+}
+.portfolio-block .item > a {
+  background: rgba(100, 174, 217, 0.85);
+}
+.choose-us-block .panel-default .accordion-toggle:before {
+  background-color:  #39a5ef;
+}
+.choose-us-block .panel-default .collapsed:before {
+  background-color: #495764;/* black */
+}
+.choose-us-block .panel-default .panel-title:hover .collapsed:before {
+  background-color:  #39a5ef;
+}
+.btn-primary {
+  background: #39a5ef;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: #047abf;
+}
+.facts-block .item {
+  background: rgba(100, 174, 217, 0.92);
+}
+.pi-price strong {
+  background: #39a5ef;
+}
+.pi-price strong:after {
+  border-top: 9px solid #39a5ef;
+}
+.pricing-content .list-unstyled li i {
+  color:  #39a5ef;
+}
+.pricing-footer .btn-default:hover,
+.pricing-footer .btn-default:active {
+  background: #39a5ef;
+}
+.portfolio-block .item b:hover {
+  color:  #39a5ef;
+}
+@media (max-width: 1024px) {
+  .header-mobi-ext .header-navigation a:hover,
+  .header-mobi-ext .header-navigation li.current a{
+    background-color:  #39a5ef;
+    color: #fff !important;
+  }
+}
+.header .mobi-toggler:hover {
+  background-color:  #39a5ef;
+  border-color:  #39a5ef;
+}
