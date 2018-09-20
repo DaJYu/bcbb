@@ -33,6 +33,8 @@
 <link href="assets/onepage/css/themes/blue.css" rel="stylesheet" id="style-color">
 <link href="assets/onepage/css/custom.css" rel="stylesheet">
 <link href="style/video-js.min.css" rel="stylesheet">
+<link href="style/creative-centre.css" rel="stylesheet">
+<link href="style/jigsaw.css" rel="stylesheet">
 <style type="text/css">
   h2 {
     font: 400 24px "PT Sans Narrow", Arial, sans-serif;
@@ -68,11 +70,12 @@
                 <div class="ite">
                     <ul class="header-navigation">
                         <li class="currents"><a href="./">首页</a></li>
-                        <li><a href="./course">课程介绍</a></li>
-                        <li><a href="./teaching_model">教学模式</a></li>
+                        <li><a href="#">课程介绍</a></li>
+                        <li><a href="#">教学模式</a></li>
                         <li><a href="./creative_centre">创作中心</a></li>
 
                         <li class="zc"><a href="#"  style="float: left;">登录&nbsp;|&nbsp;注册</a></li>
+                        <li class="txlg"><img src="images/t1.jpg" class="txlg-img" id="txlg-img"></li>
                     </ul>
                 </div>
                 <!-- Navigation END -->
@@ -80,6 +83,143 @@
         </div>
     </div>
     <!-- Header END -->
+
+    <!--  BEGIN-->
+    <div class="modal-fade" id="zhzcdl">
+        <div class="kd container sjhxg">
+            <span class="glyphicon glyphicon-remove" id="zc-gb"></span>
+
+            <div class="sjhxg-con yc" id="sjzc-zc">
+                <!-- BEGIN -->
+                <div class="jcbd" id="sjzc-sjhzc">
+                    <h2>手机号注册</h2>
+                    <div class="sjhxg-con-jb">
+                        <p>手机号</p>
+                        <div class="sjhxg-con-jb-sj sz">
+                            <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入手机号" id="sjzc-sjh"></label>
+                        </div>
+                        <div class="tpyz" id="tpyz-zc">
+                            <div id="tpyz-zcxs"></div>
+                            <input class="msg" id="tpyz-zcts"/>
+                        </div>
+                        <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('sjzc-sjh','#sjzc-yzm')">获取验证码</button></label></div>
+                        <div class="mmsz"><input type="password" name="" placeholder="请设置您的登录密码" id="yhmm"><img src="images/look.png"></div>
+                        <input type="" name="" id="sjzc-ts" readonly="readonly">
+                    </div>
+                    <div class="sjhxg-con-xyb" id="sjzc">注册</div>
+                    <p class="bq" id="zx-qdl">已有账号,去登录></p>
+                    <div class="zc-wxsm" id="zc-wxsm">
+                        <img src="images/weixin-tb.png">
+                        <p>微信扫码注册</p>
+                    </div>
+                </div>
+                <!-- END -->
+                <div class="jcbd yc" id="wxh-zc">
+                    <h2>微信号注册</h2>
+                    <div class="sjhxg-con-jb img">
+                        <img src="images/weixin.png">
+                        <p>请打开微信扫一扫</p>
+                    </div>
+                    <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div>
+                    <p id="ysjhzc">手机号注册</p>
+                </div>
+                <!-- BEGIN -->
+                <div class="wcbd" id="sjzc-wc">
+                    <h2>完成注册</h2>
+                    <div class="sjhxg-con-jb img">
+                        <img src="images/duihao.png" class="sjhxg-con-jb-img"><br>
+                        <input type="" name="" id="wcts" readonly="readonly">
+                    </div>
+                    <div class="sjhxg-con-xyb xyb-sjwc" id="sjzc-qws">去完善</div>
+                </div>
+                <!-- END -->
+            </div>
+            <!-- END -->
+             <!-- BEGIN -->
+            <div class="sjhxg-con" id="sjdl-dl" style="margin-top: 23px;">
+                <!-- BEGIN -->
+                <div style="height: 30px">
+                    <ul>
+                        <li class="sjdl sjhxg-con-xz" style="width: 50%;">手机号登录</li>
+                        <li class="xyzh" style="width: 50%;">校园账号登录</li>
+                    </ul> 
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="jbbd yc" id="xyzh-xs">
+                    <div class="sjhxg-con-jb img" style="margin-top: 80px;">
+                        <img src="images/404.png">
+                        <p>正在开发中，敬请期待...</p>
+                    </div>
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="jcbd" id="sjdl-sjhdl">
+                    <h2>输入您的手机号</h2>
+                    <div class="sjhxg-con-jb">
+                        <p>手机号</p>
+                        <div class="sjhxg-con-jb-sj sz">
+                            <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入手机号" id="sjdl-sjh"></label>
+                        </div>
+                        <div class="tpyz" id="tpyz-dl">
+                            <div id="tpyz-dlxs"></div>
+                            <input class="msg" id="tpyz-dlts"/>
+                        </div>
+                        <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjdl-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjdl-yzm" onclick="invokeSettime('sjdl-sjh','#sjdl-yzm')">获取验证码</button></label></div>
+                        <input class="ts" type="" name="" id="sjdl-ts" readonly="readonly" style="width: 70%">
+                        <span class="dl-zhdl" id="dl-zhdl">使用账号密码登录</span>
+                    </div>
+                    <div class="sjhxg-con-xyb dl" id="sjdl-dxdl" style="margin: 50px 0 8px;">登录</div>
+                    <p class="bq" id="zx-qzc" style="color: #31a2f2;">去注册></p>
+                    <div class="zc-wxsm" id="dl-wxsm">
+                        <img src="images/weixin-tb.png">
+                        <p>微信扫码登录</p>
+                    </div>
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="jcbd yc" id="wxh-dl">
+                    <h2>微信号登录</h2>
+                    <div class="sjhxg-con-jb img">
+                        <img src="images/weixin.png">
+                        <p>请打开微信扫一扫</p>
+                    </div>
+                    <!-- <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div> -->
+                    <p class="bq" id="thsjhdl">手机号登录</p>
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="jcbd yc" id="dl-sjzhdl">
+                    <h2>账号密码登录</h2>
+                    <div class="sjhxg-con-jb" style="margin-top: 50px;">
+                        <div class="sjhxg-con-jb-sj"><input type="tel" name="" placeholder="请输入手机号" id="zhdl-sjh"></div>
+                        <div><label class="sjhxg-con-jb-lb" style="width: 100%;"><input type="" name="" placeholder="请输入密码" id="zhdl-mm" maxlength="16"></label></div>
+                        <input class="ts" type="" name="" id="zhdl-ts" readonly="readonly" style="width: 70%">
+                        <span class="dl-zhdl" id="dl-dxdl">使用短信验证登录</span>
+                    </div>
+                    <div class="sjhxg-con-xyb dl" id="sjdl-zhdl" style="margin: 50px 0 8px;">登录</div>
+                    <p class="bq" id="zh-qzc" style="color: #31a2f2;">去注册></p>
+                    <div class="zc-wxsm" id="zh-wxsm">
+                        <img src="images/weixin-tb.png">
+                        <p>微信扫码登录</p>
+                    </div>
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="wcbd" id="sjzc-wc">
+                    <h2>完成注册</h2>
+                    <div class="sjhxg-con-jb img">
+                        <img src="images/duihao.png" class="sjhxg-con-jb-img"><br>
+                        <input type="" name="" id="wcts" readonly="readonly">
+                    </div>
+                    <div class="sjhxg-con-xyb xyb-sjwc" id="sjzc-qws">去完善</div>
+                </div>
+                <!-- END -->
+            </div>
+            <!-- END -->
+        </div>  
+    </div>
+    <!--END  -->
 
     <!-- Promo block BEGIN -->
     <div class="promo-block" id="promo-block">
@@ -325,17 +465,17 @@
             <div class="carousel-inner" role="listbox">
                 <!-- First slide -->
                 <div class="item active">
-                  <a href="./teaching_model"><img src="assets/onepage/img/slider/slide1.jpg" class="img"></a>
+                  <a href="#"><img src="assets/onepage/img/slider/slide1.jpg" class="img"></a>
                 </div>
                 
                 <!-- Second slide -->
                 <div class="item">
-                  <a href="./teaching_model"><img src="assets/onepage/img/slider/slide2.jpg" class="img"></a>
+                  <a href="#"><img src="assets/onepage/img/slider/slide2.jpg" class="img"></a>
                 </div>
 
                 <!-- Third slide -->
                 <div class="item">
-                  <a href="./teaching_model"><img src="assets/onepage/img/slider/slide3.jpg" class="img"></a>
+                  <a href="#"><img src="assets/onepage/img/slider/slide3.jpg" class="img"></a>
                 </div>
             </div>
             <!-- Indicators -->
@@ -773,6 +913,8 @@
 <script src="assets/onepage/scripts/layout.js" type="text/javascript"></script>
 <script src="assets/pages/scripts/bs-carousel.js" type="text/javascript"></script>
 <script src="js/video.min.js"></script>
+<script src="js/jigsaw.js" type="text/javascript"></script>
+<script src="js/works.js" type="text/javascript"></script>
 <script>
     videojs.options.flash.swf = "js/video-js.swf";
       var myPlayer = videojs('example_video_1');

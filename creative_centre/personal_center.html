@@ -60,8 +60,8 @@ background-size: 100%;
             <div class="ite">
                 <ul class="header-navigation">
                     <li><a href="../">首页</a></li>
-                    <li><a href="../course">课程介绍</a></li>
-                    <li><a href="../teaching_model">教学模式</a></li>
+                    <li><a href="#">课程介绍</a></li>
+                    <li><a href="#">教学模式</a></li>
                     <li><a href="../creative_centre">创作中心</a></li>
 
                     <li class="zc"><a href="#">登录&nbsp;|&nbsp;注册</a></li>
@@ -79,32 +79,33 @@ background-size: 100%;
 <div class="modal-fade" id="zhzcdl">
     <div class="kd container sjhxg">
         <span class="glyphicon glyphicon-remove" id="zc-gb"></span>
-        <div class="sjhxg-con">
+
+        <div class="sjhxg-con yc" id="sjzc-zc">
             <!-- BEGIN -->
             <div class="jcbd" id="sjzc-sjhzc">
                 <h2>手机号注册</h2>
                 <div class="sjhxg-con-jb">
                     <p>手机号</p>
-                    <div class="sjhxg-con-jb-sj">
-                        <label class="sjhxg-con-jb-sj-lb">+86</label><label><input type="tel" name="" placeholder="请输手机号" id="sjzc-sjh"></label>
+                    <div class="sjhxg-con-jb-sj sz">
+                        <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入手机号" id="sjzc-sjh"></label>
                     </div>
-                    <div class="tpyz">
-                        <div id="captcha"></div>
-                        <input id="msg"></input>
+                    <div class="tpyz" id="tpyz-zc">
+                        <div id="tpyz-zcxs"></div>
+                        <input class="msg" id="tpyz-zcts"/>
                     </div>
-                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('#sjzc-yzm')">获取验证码</button></label></div>
+                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('sjzc-sjh','#sjzc-yzm')">获取验证码</button></label></div>
                     <div class="mmsz"><input type="password" name="" placeholder="请设置您的登录密码" id="yhmm"><img src="../images/look.png"></div>
                     <input type="" name="" id="sjzc-ts" readonly="readonly">
                 </div>
                 <div class="sjhxg-con-xyb" id="sjzc">注册</div>
-                <p id="qdl">已有账号,去登录></p>
-                <div class="zc-wxsm">
+                <p class="bq" id="zx-qdl">已有账号,去登录></p>
+                <div class="zc-wxsm" id="zc-wxsm">
                     <img src="../images/weixin-tb.png">
                     <p>微信扫码注册</p>
                 </div>
             </div>
             <!-- END -->
-            <div class="jcbd" id="wxh-zc" style="display: none;">
+            <div class="jcbd yc" id="wxh-zc">
                 <h2>微信号注册</h2>
                 <div class="sjhxg-con-jb img">
                     <img src="../images/weixin.png">
@@ -124,6 +125,89 @@ background-size: 100%;
             </div>
             <!-- END -->
         </div>
+        <!-- END -->
+         <!-- BEGIN -->
+        <div class="sjhxg-con" id="sjdl-dl" style="margin-top: 23px;">
+            <!-- BEGIN -->
+            <div style="height: 30px">
+                <ul>
+                    <li class="sjdl sjhxg-con-xz" style="width: 50%;">手机号登录</li>
+                    <li class="xyzh" style="width: 50%;">校园账号登录</li>
+                </ul> 
+            </div>
+            <!-- END -->
+            <!-- BEGIN -->
+            <div class="jbbd yc" id="xyzh-xs">
+                <div class="sjhxg-con-jb img" style="margin-top: 80px;">
+                    <img src="../images/404.png">
+                    <p>正在开发中，敬请期待...</p>
+                </div>
+            </div>
+            <!-- END -->
+            <!-- BEGIN -->
+            <div class="jcbd" id="sjdl-sjhdl">
+                <h2>输入您的手机号</h2>
+                <div class="sjhxg-con-jb">
+                    <p>手机号</p>
+                    <div class="sjhxg-con-jb-sj sz">
+                        <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入手机号" id="sjdl-sjh"></label>
+                    </div>
+                    <div class="tpyz" id="tpyz-dl">
+                        <div id="tpyz-dlxs"></div>
+                        <input class="msg" id="tpyz-dlts"/>
+                    </div>
+                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjdl-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjdl-yzm" onclick="invokeSettime('sjdl-sjh','#sjdl-yzm')">获取验证码</button></label></div>
+                    <input class="ts" type="" name="" id="sjdl-ts" readonly="readonly" style="width: 70%">
+                    <span class="dl-zhdl" id="dl-zhdl">使用账号密码登录</span>
+                </div>
+                <div class="sjhxg-con-xyb dl" id="sjdl-dxdl" style="margin: 50px 0 8px;">登录</div>
+                <p class="bq" id="zx-qzc" style="color: #31a2f2;">去注册></p>
+                <div class="zc-wxsm" id="dl-wxsm">
+                    <img src="../images/weixin-tb.png">
+                    <p>微信扫码登录</p>
+                </div>
+            </div>
+            <!-- END -->
+            <!-- BEGIN -->
+            <div class="jcbd yc" id="wxh-dl">
+                <h2>微信号登录</h2>
+                <div class="sjhxg-con-jb img">
+                    <img src="../images/weixin.png">
+                    <p>请打开微信扫一扫</p>
+                </div>
+                <!-- <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div> -->
+                <p class="bq" id="thsjhdl">手机号登录</p>
+            </div>
+            <!-- END -->
+            <!-- BEGIN -->
+            <div class="jcbd yc" id="dl-sjzhdl">
+                <h2>账号密码登录</h2>
+                <div class="sjhxg-con-jb" style="margin-top: 50px;">
+                    <div class="sjhxg-con-jb-sj"><input type="tel" name="" placeholder="请输入手机号" id="zhdl-sjh"></div>
+                    <div><label class="sjhxg-con-jb-lb" style="width: 100%;"><input type="" name="" placeholder="请输入密码" id="zhdl-mm" maxlength="16"></label></div>
+                    <input class="ts" type="" name="" id="zhdl-ts" readonly="readonly" style="width: 70%">
+                    <span class="dl-zhdl" id="dl-dxdl">使用短信验证登录</span>
+                </div>
+                <div class="sjhxg-con-xyb dl" id="sjdl-zhdl" style="margin: 50px 0 8px;">登录</div>
+                <p class="bq" id="zh-qzc" style="color: #31a2f2;">去注册></p>
+                <div class="zc-wxsm" id="zh-wxsm">
+                    <img src="../images/weixin-tb.png">
+                    <p>微信扫码登录</p>
+                </div>
+            </div>
+            <!-- END -->
+            <!-- BEGIN -->
+            <div class="wcbd" id="sjzc-wc">
+                <h2>完成注册</h2>
+                <div class="sjhxg-con-jb img">
+                    <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                    <input type="" name="" id="wcts" readonly="readonly">
+                </div>
+                <div class="sjhxg-con-xyb xyb-sjwc" id="sjzc-qws">去完善</div>
+            </div>
+            <!-- END -->
+        </div>
+        <!-- END -->
     </div>  
 </div>
 <!--END  -->
@@ -138,37 +222,37 @@ background-size: 100%;
                 <label class="user"><div class="user-pic">修改头像</div></label>
             </label>
             <div  class="modal-fade" id="grtxbj">
-               <div class="kd container modal-txxg">
-                   <h2>头像修改</h2>
-                   <div class="modal-txxg-tb">
-                       <div class="modal-txxg-tb-sc">
-                           <img src="" class="grtx-img" id="avarimgs">
-                           <div class="modal-txxg-tb-bdsc">
+             <div class="kd container modal-txxg">
+                 <h2>头像修改</h2>
+                 <div class="modal-txxg-tb">
+                     <div class="modal-txxg-tb-sc">
+                         <img src="" class="grtx-img" id="avarimgs">
+                         <div class="modal-txxg-tb-bdsc">
                             <span>本地上传</span>
                             <input type="file" name="pclogo" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*">
                         </div>
                     </div>
                     <div class="modal-txxg-tb-tj">
-                       <p>推荐头像</p>
-                       <ul>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                           <li><img src="./"></li>
-                       </ul>
-                   </div>
-               </div>
-               <span class="modal-txxg-txbc">保存</span><br><span class="modal-txxg-qxxg">取消</span>
-           </div>
-       </div>
-   </div>
-   <p id="grtx-nc"></p>
-   <span id="grtx-qm"></span><br>
-   <a href="#"><img src="../images/kscz-btn.png" class="grtx-kscz"></a>
+                     <p>推荐头像</p>
+                     <ul>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                         <li><img src="./"></li>
+                     </ul>
+                 </div>
+             </div>
+             <span class="modal-txxg-txbc">保存</span><br><span class="modal-txxg-qxxg">取消</span>
+         </div>
+     </div>
+ </div>
+ <p id="grtx-nc"></p>
+ <span id="grtx-qm"></span><br>
+ <a href="#"><img src="../images/kscz-btn.png" class="grtx-kscz"></a>
 </div>
 </div>
 
@@ -243,6 +327,10 @@ background-size: 100%;
                                 <option value="四年">四年</option>
                                 <option value="五年">五年</option>
                                 <option value="六年">六年</option>
+                                <option value="七年">七年</option>
+                                <option value="八年">八年</option>
+                                <option value="九年">九年</option>
+                                <option value="十年">十年</option>
                             </select>
                             <select name="mouth" id="jbsjxx-bcy">
                                 <option value="0">请选月</option>
@@ -253,8 +341,11 @@ background-size: 100%;
                                 <option value="五个月">五个月</option>
                                 <option value="六个月">六个月</option>
                                 <option value="七个月">四个月</option>
-                                <option value="五个月">五个月</option>
-                                <option value="六个月">六个月</option>
+                                <option value="八个月">八个月</option>
+                                <option value="九个月">九个月</option>
+                                <option value="十个月">十个月</option>
+                                <option value="十一个月">十一个月</option>
+                                <option value="十二月">六十二</option>
                             </select>
                         </label></div>
                         <div class="content-jczl-jbxx-lab"><label class="jbxx-title"></label><label class="jbxx-cont"><div class="content-btn" id="zlbc">保存</div></label></div>
@@ -311,7 +402,7 @@ background-size: 100%;
                             <div class="kd container sjhxg">
                                 <div class="sjhxg-con">
                                     <div style="height: 50px">
-                                       <ul>
+                                     <ul>
                                         <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
                                         <li class="two"><div class="">2</div></li>
                                         <li class="three"><div class="">3</div></li>
@@ -323,7 +414,7 @@ background-size: 100%;
                                     <div class="sjhxg-con-jb">
                                         <p>手机号</p>
                                         <div class="sjhxg-con-jb-sj">
-                                            <label class="sjhxg-con-jb-sj-lb">+86</label><label><input type="tel" name="" placeholder="请输入原手机号" id="ysjh"></label>
+                                            <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入原手机号" id="ysjh"></label>
                                         </div>
                                         <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="ysjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="jbsj-hqyzm">获取验证码</button></label></div>
                                         <input type="" name="" id="ysjhts" readonly="readonly">
@@ -337,7 +428,7 @@ background-size: 100%;
                                     <div class="sjhxg-con-jb">
                                         <p>手机号</p>
                                         <div class="sjhxg-con-jb-sj">
-                                            <label class="sjhxg-con-jb-sj-lb">+86</label><label><input type="tel" name="" placeholder="请输手机号" id="xsjh"></label>
+                                            <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输手机号" id="xsjh"></label>
                                         </div>
                                         <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="xsjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="bdsj-hqyzm">获取验证码</button></label></div>
                                         <input type="" name="" id="xsjhts" readonly="readonly">
@@ -367,7 +458,7 @@ background-size: 100%;
                         <div class="kd container sjhxg">
                             <div class="sjhxg-con">
                                 <div style="height: 50px">
-                                   <ul>
+                                 <ul>
                                     <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
                                     <li class="two"><div class="">2</div></li>
                                     <li class="three"><div class="">3</div></li>

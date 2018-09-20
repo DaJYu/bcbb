@@ -1,8 +1,8 @@
 $(function(){
     yhsfcz();
-    grzxtxx();   
+    grzxtxx(); 
+    wokesAll();  
     grzlws();
-    wokesAll();
     // $(".content-grzl").hide();
 });
 
@@ -102,11 +102,12 @@ function grzlws(){
     $('.zpfbqk').hide();
     $('.content-zp').empty();
     $('.content-grzl').show();
+    $('#pages').empty();
     $('#jczl-xs').hide();
     $('#jczl-xg').show();
     grzlxs();
 } else {
-    wokesYfb();
+    wokesYfb('.content-zp');
 }
 }
 
@@ -262,12 +263,18 @@ function wokesRm(){
 //我的作品
 function wokesWd(){
     var user="aa";
-    if (user==null||user=="") {
-        var cw ='<div class="cwts cwts-ts"><img src="../images/404.png"><p>您还未登录喔～</p><button class="wd-dl">登录</button></div>'
+    if (userid==undefined||userid==null||userid=="") {
+        var cw ='<div class="cwts cwts-ts"><img src="../images/404.png"><p>您还未登录喔～</p><button class="wd-dl" id="wd-dl">登录</button></div>'
         $('#all').append(cw);
+        $("#wd-dl").click(function(){
+            $('#zhzcdl').show();
+            $('.header').hide();
+            tpyz('tpyz-zcxs','tpyz-zcts');
+            tpyz('tpyz-dlxs','tpyz-dlts');
+        })
     } else {
          $('#czxx-wdzp').show();
-         wokesYfb();
+         wokesYfb('#all');
     }
 
 }
@@ -290,15 +297,17 @@ function worksZs(item){
 }
 
 //我的已发布作品
-function wokesYfb(){
-    $('.content-zp').empty();
+function wokesYfb(cs){
+    $(cs).empty();
+    var pagesize=20;
     var data={
-        pagesize:20,
+        pagesize:pagesize,
         page:1
     }
+    var url='../js/works.json';
     $.ajax({
         type:'get',
-        url:'../js/works.json',
+        url:url,
         cache:false,
         async:false,
         data:data
@@ -306,7 +315,7 @@ function wokesYfb(){
         console.log(data.content);
         if (data.content==null||data.content=="") {
             var cw ='<div class="cwts"><p>暂无作品～</p></div>'
-            $('.content-zp').append(cw);
+            $(cs).append(cw);
         } else {
             $.each(data.content,function(index,item){
 
@@ -323,23 +332,70 @@ function wokesYfb(){
                 zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
                 zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
 
-                $('.content-zp').append(zp);
+                $(cs).append(zp);
             })
             $('#pages').empty();
-            pages('yfzp-page','../js/works.json',data.total);
+            // pages('yfzp-page','../js/works.json',data.total);
+            $('#pages').append('<div class="box" id="yfb-page"></div>');
+
+              var onPagechange = function(page){
+                console.log('当前点击页码',page);
+                var data={
+                    pagesize:pagesize,
+                    page:page
+                }
+                $.ajax({
+                    type:'get',
+                    url:url,
+                    cache:false,
+                    async:false,
+                    data:data
+                }).done(function(data){//作品id、作品名称、作品图片地址、发布时间、作者、作品查看量、收藏量、点赞量
+                    console.log(data.content);
+                    $(cs).empty();
+                    $.each(data.content,function(index,item){
+                        
+                var zp="";
+                zp+="<div class='row-zpzs'>";
+                zp+="<div class='pricing-item'>";
+                zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-bj'>编辑</a><a href='#' id='fbzp-xz'>下线</a><a href='#' id='fbzp-sc'>删除</a></div>";
+                zp+="<div class='pricing-content'>";
+                zp+="<p class='work-title'>"+item.name+"</p>";
+                zp+="<p class='work-time'>"+item.fbsj+"</p>";
+                zp+="<p class='work-con'>";
+                zp+="<span><img class='work-img' src='../images/look.png'>"+item.ckl+"</span>";
+                zp+="<span><img class='work-img' src='../images/cang.png'>"+item.scl+"</span>";
+                zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
+                zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
+
+                $(cs).append(zp);
+                    })
+                })
+            }
+            var obj = {
+                wrapid:'yfb-page', //页面显示分页器容器id
+                total:data.total,//总条数
+                pagesize:pagesize,//每页显示10条
+                currentPage:1,//当前页
+                onPagechange:onPagechange,
+                btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+            }
+            pagination.init(obj);
         }
     })
 }
 
 //个人未发布作品
-function wokesWfb(){
+function wokesWfb(cs){
+    var pagesize=20;
     var data={
-        pagesize:20,
+        pagesize:pagesize,
         page:1
     }
+    var url='../js/works.json';
     $.ajax({
         type:'get',
-        url:'../js/works.json',
+        url:url,
         cache:false,
         async:false,
         data:data
@@ -347,7 +403,7 @@ function wokesWfb(){
         console.log(data.content);
         if (data.content==null||data.content=="") {
             var cw ='<div class="cwts"><p>暂无作品～</p></div>'
-            $('.content-zp').append(cw);
+            $(cs).append(cw);
         } else {
             $.each(data.content,function(index,item){
 
@@ -359,23 +415,64 @@ function wokesWfb(){
                 zp+="<p class='work-title'>"+item.name+"</p>";
                 zp+="<p class='work-time'>"+item.fbsj+"</p><p class='work-btm'>&nbsp</p></div></div></div>";
 
-                $('.content-zp').append(zp);
+                $(cs).append(zp);
             })
             $('#pages').empty();
-            pages('wfzp-page','../js/works.json',data.total);
+            $('#pages').append('<div class="box" id="wfb-page"></div>');
+
+              var onPagechange = function(page){
+                console.log('当前点击页码',page);
+                var data={
+                    pagesize:pagesize,
+                    page:page
+                }
+                $.ajax({
+                    type:'get',
+                    url:url,
+                    cache:false,
+                    async:false,
+                    data:data
+                }).done(function(data){//作品id、作品名称、作品图片地址、发布时间、作者、作品查看量、收藏量、点赞量
+                    console.log(data.content);
+                    $(cs).empty();
+                    $.each(data.content,function(index,item){
+                   
+                var zp="";
+                zp+="<div class='row-zpzs'>";
+                zp+="<div class='pricing-item'>";
+                zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-bj'>发布</a><a href='#' id='fbzp-xz'>编辑</a><a href='#' id='fbzp-sc'>删除</a></div>";
+                zp+="<div class='pricing-content'>";
+                zp+="<p class='work-title'>"+item.name+"</p>";
+                zp+="<p class='work-time'>"+item.fbsj+"</p><p class='work-btm'>&nbsp</p></div></div></div>";
+
+                $(cs).append(zp);
+                    })
+                })
+            }
+            var obj = {
+                wrapid:'wfb-page', //页面显示分页器容器id
+                total:data.total,//总条数
+                pagesize:pagesize,//每页显示10条
+                currentPage:1,//当前页
+                onPagechange:onPagechange,
+                btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+            }
+            pagination.init(obj);
         }
     })
 }
 
 //个人收藏作品
 function wokesSczp(){
+    var pagesize=20;
     var data={
-        pagesize:20,
+        pagesize:pagesize,
         page:1
     }
+    var url='../js/works.json';
     $.ajax({
         type:'get',
-        url:'../js/works.json',
+        url:url,
         cache:false,
         async:false,
         data:data
@@ -403,7 +500,51 @@ function wokesSczp(){
                 $('.content-zp').append(zp);
             })
             $('#pages').empty();
-            pages('sczp-page','../js/works.json',data.total);
+            $('#pages').append('<div class="box" id="wdsc-page"></div>');
+
+              var onPagechange = function(page){
+                console.log('当前点击页码',page);
+                var data={
+                    pagesize:pagesize,
+                    page:page
+                }
+                $.ajax({
+                    type:'get',
+                    url:url,
+                    cache:false,
+                    async:false,
+                    data:data
+                }).done(function(data){//作品id、作品名称、作品图片地址、发布时间、作者、作品查看量、收藏量、点赞量
+                    console.log(data.content);
+                    $('.content-zp').empty();
+                    $.each(data.content,function(index,item){
+                   
+                var zp="";
+                zp+="<div class='row-zpzs'>";
+                zp+="<div class='pricing-item'>";
+                zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-xz'>编辑</a><a href='#' id='fbzp-sc'>删除</a></div>";
+                zp+="<div class='pricing-content'>";
+                zp+="<p class='work-title'>"+item.name+"</p>";
+                zp+="<p class='work-time'>"+item.fbsj+"</p>";
+                zp+="<p class='work-con'>";
+                zp+="<span><img class='work-img' src='../images/look.png'>"+item.ckl+"</span>";
+                zp+="<span><img class='work-img' src='../images/cang.png'>"+item.scl+"</span>";
+                zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
+                zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
+
+                $('.content-zp').append(zp);
+                    })
+                })
+            }
+            var obj = {
+                wrapid:'wdsc-page', //页面显示分页器容器id
+                total:data.total,//总条数
+                pagesize:pagesize,//每页显示10条
+                currentPage:1,//当前页
+                onPagechange:onPagechange,
+                btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+            }
+            pagination.init(obj);
         }
     })
 }
@@ -678,10 +819,13 @@ function grtxbc(){
             $("#grtx-tx").attr("src",data.tpdz);
             $("#avarimgs").attr("src",data.tpdz);
             $("#txlg-img").attr("src",data.tpdz);
+            $('#grtxbj').hide();    
+            $('.header').show();
         })
 }
 
-function invokeSettime(obj){
+function invokeSettime(sjid,obj){
+    hqsjyzm(sjid);
     var countdown=60;
     settime(obj);
     function settime(obj) {
@@ -706,7 +850,7 @@ function sjzcqk(){
     var tel=$('#sjzc-sjh').val();
     var yzm=$('#sjzc-sjyzm').val();
     var mm=$('#yhmm').val();
-    var tpyz=$('#msg').val();
+    var tpyz=$('#tpyz-zcts').val();
     var p1=/^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
          //(p1.test(theinput));
          if (tel==null||tel=='') {
@@ -723,7 +867,7 @@ function sjzcqk(){
             $('#sjzc-ts').attr("value", "");      
             $.ajax({
                 type:'get',
-                url:'../js/works.json',//向用户表注册新用户、手机号、密码、注册时间
+                url:'../js/works.json',//向用户表注册新用户、手机号、密码、注册时间、默认头像地址
                 cache:false,
                 async:false,
                 data:{
@@ -732,7 +876,7 @@ function sjzcqk(){
                     zhmm:mm
                 }
             }).done(function(data){
-            console.log(data.content);//验证成功后台直接完成注册，并将用户id传给Cookie，  失败提示重新注册
+            console.log(data.content);//先查询该手机号是否已被注册，未注册则继续验证成功后台直接完成注册，并将用户id传给Cookie，  若以注册则返回提示，若失败提示重新注册
             if (true) {
                $('#sjzc-sjhzc').hide();
                $('#sjzc-wc').show();
@@ -744,6 +888,97 @@ function sjzcqk(){
 
     }
 
+//手机登录
+function sjdxdl(){
+    var tel=$('#sjdl-sjh').val();
+    var yzm=$('#sjdl-sjyzm').val();
+    var tpyz=$('#tpyz-dlxs').val();
+    var p1=/^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
+         //(p1.test(theinput));
+         if (tel==null||tel=='') {
+            $('#sjdl-ts').attr("value", "手机号码不能为空！");
+        } else if(p1.test(tel)==false) {  
+            $('#sjdl-ts').attr("value", "请输入正确的手机号码！");
+        } else if (yzm.length!=6) {
+            $('#sjdl-ts').attr("value", "验证码格式错误"); 
+        } else if (tpyz==null||tpyz==''||tpyz=='失败') {console.log(tpyz)
+           $('#sjdl-ts').attr("value", "按住滑块，拖动完成上方拼图验证"); 
+        } else {//console.log(1)
+            $('#sjdl-ts').attr("value", "");      
+            $.ajax({
+                type:'get',
+                url:'../js/works.json',
+                cache:false,
+                async:false,
+                data:{
+                    jbsj:tel,
+                    sjyzm:yzm
+                }
+            }).done(function(data){
+            console.log(data.content);//先查询该手机号是否已被注册，注册则继续验证成功后台返回结果，并将用户id传给Cookie，  若未注册或验证失败则返回相应提示
+            if (true) {    
+                $('.header').show();
+                $('#zhzcdl').hide();
+           } else {
+            $('#sjdl-ts').attr("value", "请输入正确的手机号码！");
+        }
+    })
+        }
+
+    } 
+
+//手机账号登陆
+function sjzhdl(){
+    var tel=$('#zhdl-sjh').val();
+    var mm=$('#zhdl-mm').val();
+    // var p1=/^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
+         //(p1.test(theinput));
+         if (tel==null||tel=='') {
+            $('#zhdl-ts').attr("value", "手机号码不能为空！");
+        } 
+        // else if(p1.test(tel)==false) {  
+        //     $('#sjzc-ts').attr("value", "请输入正确的手机号码！");
+        // } 
+        else if (8>mm.length>16) {console.log(mm.length)
+            $('#zhdl-ts').attr("value", "密码须由8-16个字符或数字组成"); 
+        } else {//console.log(1)
+            $('#zhdl-ts').attr("value", "");      
+            $.ajax({
+                type:'get',
+                url:'../js/works.json',
+                cache:false,
+                async:false,
+                data:{
+                    jbsj:tel,
+                    zhmm:mm
+                }
+            }).done(function(data){
+            console.log(data.content);//先查询验证成功后台返回结果，并将用户id传给Cookie，  若未注册或验证失败则返回相应提示
+            if (true) {
+                $('.header').show();
+                $('#zhzcdl').hide();
+           } else {
+            $('#zhdl-ts').attr("value", "手机号或密码不正确！");
+                }
+            })
+        }
+
+}
+
+function tpyz(nrid,tsid){
+    jigsaw.init({
+    el: document.getElementById(nrid),
+    onSuccess: function() {
+      document.getElementById(tsid).value = '成功'
+      },
+      onFail: cleanMsg,
+      onRefresh: cleanMsg
+    })
+    function cleanMsg() {
+        document.getElementById(tsid).value = '失败'
+    }
+
+}
     $('.works-selt li').click(function(){
         // $('.works-selt li').addClass('cur');
         $('.works-selt li').removeClass("cur");
@@ -771,7 +1006,7 @@ function sjzcqk(){
         $('#all').empty();
         $('#pages').empty();
         wokesWd();
-        wokesYfb();
+        // wokesYfb('#all');
     })
 
 ////我的作品
@@ -782,7 +1017,7 @@ $("#grzp").click(function(){
     $('.yfb').addClass("xz");
         $('#pages').empty();
     $('.content-zp').empty();
-    wokesYfb();
+    wokesYfb('.content-zp');//
 })
 //收藏作品
 $("#sczp").click(function(){
@@ -812,13 +1047,17 @@ $(".zpfbqk li").click(function(){
 
 $(".yfb").click(function(){
     $('.content-zp').empty();
+    $('#all').empty();
     $('#pages').empty();
-    wokesYfb();
+    wokesYfb('.content-zp');
+    wokesYfb('#all');
 })
 $(".wfb").click(function(){
     $('.content-zp').empty();
+    $('#all').empty();
     $('#pages').empty();
-    wokesWfb();
+    wokesWfb('.content-zp');
+    wokesWfb('#all');
 })
 
 
@@ -879,22 +1118,26 @@ $("#sjh").click(function(){
 
 //获取手机验证码
 $("#jbsj-hqyzm").click(function(){
-    hqsjyzm('ysjh');
-    invokeSettime('#jbsj-hqyzm');
+    // hqsjyzm('#ysjh');
+    invokeSettime('#ysjh','#jbsj-hqyzm');
 })
 $("#bdsj-hqyzm").click(function(){
-    hqsjyzm('xsjh');
-    invokeSettime('#bdsj-hqyzm');
+    // hqsjyzm('#xsjh');
+    invokeSettime('#xsjh','#bdsj-hqyzm');
 })
 
 
 //头像编辑
 $(".user").click(function(){
-    $('#grtxbj').show();
+    $('#grtxbj').show();    
+    $('.header').hide();
+    // $('#zhzcdl').();
     // $("#jczl-xg").hide();
 }) 
 $(".modal-txxg-qxxg").click(function(){
-    $('#grtxbj').hide();
+    $('#grtxbj').hide();    
+    $('.header').show();
+    // $('#zhzcdl').hide();
     // $("#jczl-xg").hide();
 }) 
 
@@ -927,9 +1170,18 @@ $(".wxh-qx").click(function(){
 //手机注册
 $(".zc").click(function(){
     $('#zhzcdl').show();
+    $('.header').hide();
+    tpyz('tpyz-zcxs','tpyz-zcts');
+    tpyz('tpyz-dlxs','tpyz-dlts');
+})
+$("#tx-zcdl").click(function(){
+    $('#zhzcdl').show();
+    $('.header').hide();
+    tpyz('tpyz-zcxs','tpyz-zcts');
+    tpyz('tpyz-dlxs','tpyz-dlts');
 })
 
-$(".zc-wxsm").click(function(){
+$("#zc-wxsm").click(function(){
     $('#sjzc-sjhzc').hide();
     $('#wxh-zc').show();
 })
@@ -961,25 +1213,92 @@ $("#sjzc-qws").click(function(){
     // wsgrzl();
 })
 
-//图片验证
+//登录注册关闭
 $("#zc-gb").click(function(){
+    $('.header').show();
     $('#zhzcdl').hide();
+    $('.sjhxg input').val('');
+    $('#tpyz-dlxs').empty();
+    $('#tpyz-zcxs').empty();
+    $('.xyzh').removeClass('sjhxg-con-xz');
+    $('.sjdl').addClass('sjhxg-con-xz');
+    $('#xyzh-xs').hide();
+    $('#sjdl-sjhdl').hide();
+    $('#wxh-dl').hide();
+    $('#sjzc-sjhzc').hide();
+    $('#wxh-zc').hide();
+    $('#sjzc-wc').hide();
+    $('#dl-sjzhdl').hide();
+    $('#sjdl-dl').show();
+    $('#sjdl-sjhdl').show();
 })
 
-jigsaw.init({
-    el: document.getElementById('captcha'),
-    onSuccess: function() {
-      document.getElementById('msg').value = '成功'
-  },
-  onFail: cleanMsg,
-  onRefresh: cleanMsg
-})
-function cleanMsg() {
-    document.getElementById('msg').value = '失败'
-}
 
 //
 
 $("#txlg-img").click(function(){
     $(location).attr('href', '/bcbb/creative_centre/personal_center.html');
 })
+//打开登录
+$("#zx-qdl").click(function(){
+    $('#sjzc-zc').hide();
+    $('#sjdl-dl').show();
+})
+//打开注册
+$("#zx-qzc").click(function(){
+    $('#sjzc-zc').show();
+    $('#sjzc-sjhzc').show();
+    $('#sjdl-dl').hide();
+})
+$("#dl-wxsm").click(function(){
+    $('#wxh-dl').show();
+    $('#sjdl-sjhdl').hide();
+})
+$("#thsjhdl").click(function(){
+    $('#wxh-dl').hide();
+    $('#sjdl-sjhdl').show();
+})
+$("#dl-dxdl").click(function(){
+    $('#dl-sjzhdl').hide();
+    $('#sjdl-sjhdl').show();
+})
+$("#dl-zhdl").click(function(){
+    $('#dl-sjzhdl').show();
+    $('#sjdl-sjhdl').hide();
+})
+$("#zh-qzc").click(function(){
+    $('#sjzc-zc').show();
+    $('#sjzc-sjhzc').show();
+    $('#sjdl-dl').hide();
+})
+$("#zh-wxsm").click(function(){
+    $('#wxh-dl').show();
+    $('#dl-sjzhdl').hide();
+})
+$(".xyzh").click(function(){
+    $('.sjdl').removeClass('sjhxg-con-xz');
+    $('.xyzh').addClass('sjhxg-con-xz');
+    $('#xyzh-xs').show();
+    $('#sjdl-sjhdl').hide();
+    $('#wxh-dl').hide();
+    $('#dl-sjzhdl').hide();
+})
+$(".sjdl").click(function(){
+    $('.xyzh').removeClass('sjhxg-con-xz');
+    $('.sjdl').addClass('sjhxg-con-xz');
+    $('#xyzh-xs').hide();
+    $('#sjdl-sjhdl').show();
+})
+
+//sjdl
+$("#sjdl-zhdl").click(function(){
+    sjzhdl()
+})
+$("#sjdl-dxdl").click(function(){
+    sjdxdl()
+})   
+//验证手机号是否正确     
+   $("#sjdl-sjh").bind('input propertychange',function () {
+        // var summary=$(this).val();
+        yzsjh('#sjdl-sjh','#sjdl-ts');
+    });

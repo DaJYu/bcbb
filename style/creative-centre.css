@@ -500,6 +500,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-family:FZLTDHK--GBK1-0;
   font-weight:400;
   color:rgba(51,51,51,1);
+  width: 100%;
 }
 /*.sjhxg-con-jb input:active{
   border: none;
@@ -507,6 +508,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   .sjhxg-con-jb-sj{
     border-bottom: solid 1px #d3d7dc;
     margin-bottom: 35px;
+  }
+  .sjh{
+    width: 85%;
   }
   .sjhxg-con-jb-sj-lb{
     width: 47px;
@@ -557,11 +561,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-weight: 400;
     color: rgba(153,153,153,1);
   }
-  #ysjhts, #xsjhts, #sjzc-ts{
-    font-size:10px;
+  #ysjhts, #xsjhts, #sjzc-ts, .ts{
+    font-size:10px !important;
     font-family:FZLTZHUNHK--GBK1-0;
-    font-weight:400;
-    color:rgba(244,79,79,1);
+    font-weight:400 !important;
+    color:rgba(244,79,79,1) !important;
     width: 100%;
   }
 
@@ -572,7 +576,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     top:0;
     left:0;
     z-index: 2;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.4);
     display: none;
   }
   #jbsjh-btn, #xbsjh-btn, #wc-btn{
@@ -773,4 +777,30 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .glyphicon:hover{
   color: #31a2f2;
+}
+.dl-zhdl {
+    font-size: 10px;
+    font-family: FZLTZHUNHK--GBK1-0;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+    line-height: 2px;
+    float: right;
+    margin-top: 10px;
+}
+.dl{
+  background: rgba(49,162,242,1);
+}
+.sz{
+  margin-bottom: 0;
+}
+.yc{
+  display: none;
+}
+.bq {
+    margin-top: 8px;
+    font-size: 10px;
+    font-family: FZLTZHUNHK--GBK1-0;
+    font-weight: 400;
+    color: rgba(187,187,187,1);
+    text-align: center;
 }
