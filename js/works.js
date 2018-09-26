@@ -72,15 +72,15 @@ function xmTanUploadImg(obj) {
   console.log("file.size = " + file.size);
   var reader = new FileReader();
   reader.onloadstart = function (e) {
-   console.log("开始读取....");
-}
-reader.onprogress = function (e) {
-   console.log("正在读取中....");
-}
-reader.onabort = function (e) {
-   console.log("中断读取....");
-}
-reader.onerror = function (e) {
+     console.log("开始读取....");
+ }
+ reader.onprogress = function (e) {
+     console.log("正在读取中....");
+ }
+ reader.onabort = function (e) {
+     console.log("中断读取....");
+ }
+ reader.onerror = function (e) {
   console.log("读取异常....");
 }
 reader.onload = function (e) {
@@ -94,7 +94,7 @@ reader.readAsDataURL(file)
 
 //个人中心判断是否新注册用户
 function grzlws(){
-   var thisURL = document.URL;      
+ var thisURL = document.URL;      
   var showval= thisURL.split("=")[1]; // alert(showval)
   if (showval==0) {
     $('#grzp').removeClass("cur");
@@ -169,21 +169,21 @@ function wokesAll(){
 //分页工具
 function pages(pageid,url,total){
 
-            $('#pages').append('<div class="box" id="'+pageid+'"></div>');
+    $('#pages').append('<div class="box" id="'+pageid+'"></div>');
 
-            var pagesize=20;
-            var onPagechange = function(page){
-                console.log('当前点击页码',page);
-                var data={
-                    pagesize:pagesize,
-                    page:page
-                }
-                $.ajax({
-                    type:'get',
-                    url:url,
-                    cache:false,
-                    async:false,
-                    data:data
+    var pagesize=20;
+    var onPagechange = function(page){
+        console.log('当前点击页码',page);
+        var data={
+            pagesize:pagesize,
+            page:page
+        }
+        $.ajax({
+            type:'get',
+            url:url,
+            cache:false,
+            async:false,
+            data:data
                 }).done(function(data){//作品id、作品名称、作品图片地址、发布时间、作者、作品查看量、收藏量、点赞量
                     console.log(data.content);
                     $('#all').empty();
@@ -201,7 +201,7 @@ function pages(pageid,url,total){
                 btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
             }
             pagination.init(obj);
-}
+        }
 
 //精选作品接口
 function wokesJx(){
@@ -273,9 +273,9 @@ function wokesWd(){
             tpyz('tpyz-dlxs','tpyz-dlts');
         })
     } else {
-         $('#czxx-wdzp').show();
-         wokesYfb('#all');
-    }
+       $('#czxx-wdzp').show();
+       wokesYfb('#all');
+   }
 
 }
 
@@ -338,7 +338,7 @@ function wokesYfb(cs){
             // pages('yfzp-page','../js/works.json',data.total);
             $('#pages').append('<div class="box" id="yfb-page"></div>');
 
-              var onPagechange = function(page){
+            var onPagechange = function(page){
                 console.log('当前点击页码',page);
                 var data={
                     pagesize:pagesize,
@@ -354,21 +354,21 @@ function wokesYfb(cs){
                     console.log(data.content);
                     $(cs).empty();
                     $.each(data.content,function(index,item){
-                        
-                var zp="";
-                zp+="<div class='row-zpzs'>";
-                zp+="<div class='pricing-item'>";
-                zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-bj'>编辑</a><a href='#' id='fbzp-xz'>下线</a><a href='#' id='fbzp-sc'>删除</a></div>";
-                zp+="<div class='pricing-content'>";
-                zp+="<p class='work-title'>"+item.name+"</p>";
-                zp+="<p class='work-time'>"+item.fbsj+"</p>";
-                zp+="<p class='work-con'>";
-                zp+="<span><img class='work-img' src='../images/look.png'>"+item.ckl+"</span>";
-                zp+="<span><img class='work-img' src='../images/cang.png'>"+item.scl+"</span>";
-                zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
-                zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
 
-                $(cs).append(zp);
+                        var zp="";
+                        zp+="<div class='row-zpzs'>";
+                        zp+="<div class='pricing-item'>";
+                        zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-bj'>编辑</a><a href='#' id='fbzp-xz'>下线</a><a href='#' id='fbzp-sc'>删除</a></div>";
+                        zp+="<div class='pricing-content'>";
+                        zp+="<p class='work-title'>"+item.name+"</p>";
+                        zp+="<p class='work-time'>"+item.fbsj+"</p>";
+                        zp+="<p class='work-con'>";
+                        zp+="<span><img class='work-img' src='../images/look.png'>"+item.ckl+"</span>";
+                        zp+="<span><img class='work-img' src='../images/cang.png'>"+item.scl+"</span>";
+                        zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
+                        zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
+
+                        $(cs).append(zp);
                     })
                 })
             }
@@ -420,7 +420,7 @@ function wokesWfb(cs){
             $('#pages').empty();
             $('#pages').append('<div class="box" id="wfb-page"></div>');
 
-              var onPagechange = function(page){
+            var onPagechange = function(page){
                 console.log('当前点击页码',page);
                 var data={
                     pagesize:pagesize,
@@ -436,16 +436,16 @@ function wokesWfb(cs){
                     console.log(data.content);
                     $(cs).empty();
                     $.each(data.content,function(index,item){
-                   
-                var zp="";
-                zp+="<div class='row-zpzs'>";
-                zp+="<div class='pricing-item'>";
-                zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-bj'>发布</a><a href='#' id='fbzp-xz'>编辑</a><a href='#' id='fbzp-sc'>删除</a></div>";
-                zp+="<div class='pricing-content'>";
-                zp+="<p class='work-title'>"+item.name+"</p>";
-                zp+="<p class='work-time'>"+item.fbsj+"</p><p class='work-btm'>&nbsp</p></div></div></div>";
 
-                $(cs).append(zp);
+                        var zp="";
+                        zp+="<div class='row-zpzs'>";
+                        zp+="<div class='pricing-item'>";
+                        zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-bj'>发布</a><a href='#' id='fbzp-xz'>编辑</a><a href='#' id='fbzp-sc'>删除</a></div>";
+                        zp+="<div class='pricing-content'>";
+                        zp+="<p class='work-title'>"+item.name+"</p>";
+                        zp+="<p class='work-time'>"+item.fbsj+"</p><p class='work-btm'>&nbsp</p></div></div></div>";
+
+                        $(cs).append(zp);
                     })
                 })
             }
@@ -502,7 +502,7 @@ function wokesSczp(){
             $('#pages').empty();
             $('#pages').append('<div class="box" id="wdsc-page"></div>');
 
-              var onPagechange = function(page){
+            var onPagechange = function(page){
                 console.log('当前点击页码',page);
                 var data={
                     pagesize:pagesize,
@@ -518,21 +518,21 @@ function wokesSczp(){
                     console.log(data.content);
                     $('.content-zp').empty();
                     $.each(data.content,function(index,item){
-                   
-                var zp="";
-                zp+="<div class='row-zpzs'>";
-                zp+="<div class='pricing-item'>";
-                zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-xz'>编辑</a><a href='#' id='fbzp-sc'>删除</a></div>";
-                zp+="<div class='pricing-content'>";
-                zp+="<p class='work-title'>"+item.name+"</p>";
-                zp+="<p class='work-time'>"+item.fbsj+"</p>";
-                zp+="<p class='work-con'>";
-                zp+="<span><img class='work-img' src='../images/look.png'>"+item.ckl+"</span>";
-                zp+="<span><img class='work-img' src='../images/cang.png'>"+item.scl+"</span>";
-                zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
-                zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
 
-                $('.content-zp').append(zp);
+                        var zp="";
+                        zp+="<div class='row-zpzs'>";
+                        zp+="<div class='pricing-item'>";
+                        zp+="<img src='"+item.tpdz+"' class='img-work'><div class='work-xg'><a href='#' id='fbzp-xz'>编辑</a><a href='#' id='fbzp-sc'>删除</a></div>";
+                        zp+="<div class='pricing-content'>";
+                        zp+="<p class='work-title'>"+item.name+"</p>";
+                        zp+="<p class='work-time'>"+item.fbsj+"</p>";
+                        zp+="<p class='work-con'>";
+                        zp+="<span><img class='work-img' src='../images/look.png'>"+item.ckl+"</span>";
+                        zp+="<span><img class='work-img' src='../images/cang.png'>"+item.scl+"</span>";
+                        zp+="<span><img class='work-img' src='../images/zan.png'>"+item.dzl+"</span>";
+                        zp+="</p><p class='work-btm'>&nbsp</p></div></div></div>";
+
+                        $('.content-zp').append(zp);
                     })
                 })
             }
@@ -616,33 +616,103 @@ function grzlxs(){
         $("#aq-mm").attr("value", grxx.mm);
 
         if (grxx.sj==null||grxx.sj=='') {
-            $("#sjh").html("立即绑定");
-            $('#sjh').addClass("aq-ljbd");
+            $(".bdsj-sjh").html("立即绑定");
+            $('.bdsj-sjh').addClass("aq-ljbd");
+            $(".bdsj-sjh").attr("id", "bd-sjh");
         } else {
-            $("#sjh").html("更换");
-            $('#sjh').removeClass("aq-ljbd");
+            $(".bdsj-sjh").html("更换");
+            $('.bdsj-sjh').removeClass("aq-ljbd");
+            $(".bdsj-sjh").attr("id", "gh-sjh");
         }
         if (grxx.wx==null||grxx.wx=='') {
-            $("#wxh").html("立即绑定");
-            $('#wxh').addClass("aq-ljbd");
+            $(".wxh").html("立即绑定");
+            $('.wxh').addClass("aq-ljbd");
+            $(".wxh").attr("id", "bd-wxh");
         } else {
-            $("#wxh").html("更换");
-            $('#wxh').removeClass("aq-ljbd");
+            $(".wxh").html("更换");
+            $('.wxh').removeClass("aq-ljbd");
+            $(".wxh").attr("id", "gh-wxh");
         }
         if (grxx.qq==null||grxx.qq=='') {
-            $("#qqh").html("立即绑定");
-            $('#qqh').addClass("aq-ljbd");
+            $(".qqh").html("立即绑定");
+            $('.qqh').addClass("aq-ljbd");
+            $(".qqh").attr("id", "bd-qqh");
         } else {
-            $("#qqh").html("更换");
-            $('#qqh').removeClass("aq-ljbd");
+            $(".qqh").html("更换");
+            $('.qqh').removeClass("aq-ljbd");
+            $(".qqh").attr("id", "gh-qqh");
         }
         if (grxx.wb==null||grxx.wb=='') {
-            $("#wbh").html("立即绑定");
-            $('#wbh').addClass("aq-ljbd");
+            $(".wbh").html("立即绑定");
+            $('.wbh').addClass("aq-ljbd");
+            $(".wbh").attr("id", "bd-wbh");
         } else {
-            $("#wbh").html("更换");
-            $('#wbh').removeClass("aq-ljbd");
+            $(".wbh").html("更换");
+            $('.wbh').removeClass("aq-ljbd");
+            $(".wbh").attr("id", "gh-wbh");
         }
+        if (grxx.mm==null||grxx.mm=='') {
+            $(".zhmm").html("设置密码");
+            $('.zhmm').addClass("aq-ljbd");
+            $(".zhmm").attr("id", "sz-zhmm");
+        } else {
+            $(".zhmm").html("修改");
+            $('.zhmm').removeClass("aq-ljbd");
+            $(".zhmm").attr("id", "xg-zhmm");
+        }
+        //
+        var sjh=$(".bdsj-sjh").attr("id");
+        var wxh=$(".wxh").attr("id");
+        var qqh=$(".qqh").attr("id");
+        var wbh=$(".wbh").attr("id");
+        var zhmm=$(".zhmm").attr("id");
+        $("#"+sjh).click(function(){
+            if (sjh=='bd-sjh') {
+                $('#bd-sjhbd').show();
+                $(".header").hide();
+            } else {
+                $('#ggxjh').show();
+                $(".header").hide();
+            }
+        }) 
+        //更换微信好
+        $("#"+wxh).click(function(){
+            // if (wxh=='bd-wxh') {
+            //     $('.header').hide();
+            //     $('#bdwxh').show();
+            // } else {
+            //     $('.header').hide();
+            //     $('#ghwxh').show();
+            // }
+        }) 
+        $("#"+qqh).click(function(){
+            if (qqh=='bd-qqh') {
+
+            } else {
+                $('.header').hide();
+                $('#ghwxh').show();
+            }
+        }) 
+        $("#"+wbh).click(function(){
+            if (wbh=='bd-wbh') {
+
+            } else {
+                $('.header').hide();
+                $('#ghwxh').show();
+            }
+        }) 
+        $("#"+zhmm).click(function(){
+            if (zhmm=='bd-zhmm') {
+
+            } else {
+                userid='3423424';
+                $("#dlmm-zh").attr("value", userid);
+                $('.header').hide();
+                $('#dlmm-wj').hide();    
+                $('#dlmmgh').show();
+
+            }
+        }) 
 
     })
 }
@@ -771,6 +841,7 @@ function jbsjh(id,tel,yzm,btnid){
                     $('#wcsjbd').hide();
                     $('#jcsjbd').show();
                     $("#sjh-qx").show();
+                    $(".header").show();
                     $(".two").removeClass("sjhxg-con-xz");
                     $(".two div").removeClass("sjhxg-con-xz1");
                     $(".three").removeClass("sjhxg-con-xz");
@@ -862,12 +933,12 @@ function sjzcqk(){
         } else if (8>mm.length>16) {console.log(mm.length)
             $('#sjzc-ts').attr("value", "密码须由8-16个字符或数字组成"); 
         } else if (tpyz==null||tpyz==''||tpyz=='失败') {console.log(tpyz)
-           $('#sjzc-ts').attr("value", "按住滑块，拖动完成上方拼图验证"); 
+         $('#sjzc-ts').attr("value", "按住滑块，拖动完成上方拼图验证"); 
         } else {//console.log(1)
             $('#sjzc-ts').attr("value", "");      
             $.ajax({
                 type:'get',
-                url:'../js/works.json',//向用户表注册新用户、手机号、密码、注册时间、默认头像地址
+                url:'/bcbb/js/works.json',//向用户表注册新用户、手机号、密码、注册时间、默认头像地址
                 cache:false,
                 async:false,
                 data:{
@@ -878,10 +949,22 @@ function sjzcqk(){
             }).done(function(data){
             console.log(data.content);//先查询该手机号是否已被注册，未注册则继续验证成功后台直接完成注册，并将用户id传给Cookie，  若以注册则返回提示，若失败提示重新注册
             if (true) {
-               $('#sjzc-sjhzc').hide();
-               $('#sjzc-wc').show();
-           } else {
-            $('#sjzc-ts').attr("value", "请输入正确的手机号码！");
+             $('#sjzc-sjhzc').hide();
+             $('#sjzc-wc').show();
+         } else {
+            $('#tpyz-zcxs').empty();
+            $('#sjzc-ts').attr("value", "手机号码或验证码不正确");
+                jigsaw.init({
+                    el: document.getElementById('tpyz-zcxs'),
+                    onSuccess: function() {
+                  document.getElementById('tpyz-zcts').value = '成功'
+                      },
+                      onFail: cleanMsg,
+                      onRefresh: cleanMsg
+                  })
+                    function cleanMsg() {
+                        document.getElementById('tpyz-zcts').value = '失败'
+                    }
         }
     })
         }
@@ -892,7 +975,7 @@ function sjzcqk(){
 function sjdxdl(){
     var tel=$('#sjdl-sjh').val();
     var yzm=$('#sjdl-sjyzm').val();
-    var tpyz=$('#tpyz-dlxs').val();
+    var tpyz=$('#tpyz-dlts').val();
     var p1=/^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
          //(p1.test(theinput));
          if (tel==null||tel=='') {
@@ -902,12 +985,12 @@ function sjdxdl(){
         } else if (yzm.length!=6) {
             $('#sjdl-ts').attr("value", "验证码格式错误"); 
         } else if (tpyz==null||tpyz==''||tpyz=='失败') {console.log(tpyz)
-           $('#sjdl-ts').attr("value", "按住滑块，拖动完成上方拼图验证"); 
+         $('#sjdl-ts').attr("value", "按住滑块，拖动完成上方拼图验证"); 
         } else {//console.log(1)
             $('#sjdl-ts').attr("value", "");      
             $.ajax({
                 type:'get',
-                url:'../js/works.json',
+                url:'/bcbb/js/works.json',
                 cache:false,
                 async:false,
                 data:{
@@ -916,13 +999,27 @@ function sjdxdl(){
                 }
             }).done(function(data){
             console.log(data.content);//先查询该手机号是否已被注册，注册则继续验证成功后台返回结果，并将用户id传给Cookie，  若未注册或验证失败则返回相应提示
-            if (true) {    
+            if (!data) {    
                 $('.header').show();
                 $('#zhzcdl').hide();
-           } else {
-            $('#sjdl-ts').attr("value", "请输入正确的手机号码！");
-        }
-    })
+                $('.sjhxg input').val('');
+                $('#tpyz-dlxs').empty();
+            } else {
+                $('#tpyz-dlxs').empty();
+                $('#sjdl-ts').attr("value", "手机号码或验证码不正确！");
+                jigsaw.init({
+                    el: document.getElementById('tpyz-dlxs'),
+                    onSuccess: function() {
+                  document.getElementById('tpyz-dlts').value = '成功'
+                      },
+                      onFail: cleanMsg,
+                      onRefresh: cleanMsg
+                  })
+                    function cleanMsg() {
+                        document.getElementById('tpyz-dlts').value = '失败'
+                    }
+            }
+        })
         }
 
     } 
@@ -945,7 +1042,7 @@ function sjzhdl(){
             $('#zhdl-ts').attr("value", "");      
             $.ajax({
                 type:'get',
-                url:'../js/works.json',
+                url:'/bcbb/js/works.json',
                 cache:false,
                 async:false,
                 data:{
@@ -957,57 +1054,212 @@ function sjzhdl(){
             if (true) {
                 $('.header').show();
                 $('#zhzcdl').hide();
-           } else {
-            $('#zhdl-ts').attr("value", "手机号或密码不正确！");
-                }
-            })
+                $('#dl-sjzhdl').hide();
+                $('#sjdl-sjhdl').show();
+                $('.sjhxg input').val('');
+                $('#tpyz-dlxs').empty();
+            } else {
+                $('#zhdl-ts').attr("value", "手机号或密码不正确！");
+            }
+        })
         }
 
-}
-
-function tpyz(nrid,tsid){
-    jigsaw.init({
-    el: document.getElementById(nrid),
-    onSuccess: function() {
-      document.getElementById(tsid).value = '成功'
-      },
-      onFail: cleanMsg,
-      onRefresh: cleanMsg
-    })
-    function cleanMsg() {
-        document.getElementById(tsid).value = '失败'
     }
 
+    function tpyz(nrid,tsid){
+        jigsaw.init({
+            el: document.getElementById(nrid),
+            onSuccess: function() {
+              document.getElementById(tsid).value = '成功'
+          },
+          onFail: cleanMsg,
+          onRefresh: cleanMsg
+      })
+        function cleanMsg() {
+            document.getElementById(tsid).value = '失败'
+        }
+
+    }
+
+//绑定手机
+function bdsjqk(){
+    var tel=$('#bd-srsjh').val();
+    var yzm=$('#bd-sjyzm').val();
+    var p1=/^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
+         //(p1.test(theinput));
+         if (tel==null||tel=='') {
+            $('#bdsj-ts').attr("value", "手机号码不能为空！");
+        } else if(p1.test(tel)==false) {  
+            $('#bdsj-ts').attr("value", "请输入正确的手机号码！");
+        } else if (yzm.length!=6) {
+            $('#bdsj-ts').attr("value", "验证码格式错误"); 
+        } else {//console.log(1)
+            $('#bdsj-ts').attr("value", "");      
+            $.ajax({
+                type:'get',
+                url:'/bcbb/js/works.json',
+                cache:false,
+                async:false,
+                data:{
+                    jbsj:tel,
+                    sjyzm:yzm
+                }
+            }).done(function(data){
+            console.log(data.content);//先查询该手机号是否已被注册，未注册则继续验证绑定，注册则提示改手机号已被注册，验证失败提示重新验证
+            if (true) {
+                $('#bdsj-wcbd').show();
+                $('#bdsj-sj').hide();
+                $(".bdsj-two").addClass("sjhxg-con-xz");
+                $(".bdsj-two div").addClass("sjhxg-con-xz1");
+                $(".bdsj-one").removeClass("sjhxg-con-xz");
+                $(".bdsj-one div").removeClass("sjhxg-con-xz1");
+            } else {
+                $('#bdsj-ts').attr("value", "请输入正确的手机号码或验证码！");
+            }
+        })
+        }
+    }
+
+//密码验证
+function dqzhmmyz(){
+    var mm=$('#yhmm-mm').val();
+    if (mm==null||mm=='') {
+        $('#dlmm-ts').attr("value", "请输入密码");
+    } if (mm.length<8) {
+        $('#dlmm-ts').attr("value", "密码须由8-16个字符或数字组成");
+    } else {
+        $.ajax({
+            type:'get',
+            url:'../js/works.json',
+            cache:false,
+            async:false,
+            data:{
+                mm:mm,
+                userid:userid
+            }
+        }).done(function(data){
+                console.log(data.content);//返回验证结果
+                if (true) {
+                    $('#dlmm-yz').hide();    
+                    $('#dlmm-szxmm').show();
+                    $('.dlmm-one').removeClass('sjhxg-con-xz');
+                    $('.dlmm-two').addClass('sjhxg-con-xz');
+                } else {
+                     $('#dlmm-ts').attr("value", "密码输入错误，请重新输入");
+                }
+                // $("#dlmm-ts").attr("src",data.tpdz);
+                // $("#avarimgs").attr("src",data.tpdz);
+                // $("#txlg-img").attr("src",data.tpdz);
+                
+            })
+    }
 }
-    $('.works-selt li').click(function(){
-        // $('.works-selt li').addClass('cur');
-        $('.works-selt li').removeClass("cur");
-        $(this).addClass("cur");
-    });
-    $("#qbzp").click(function(){
-        $('#all').empty();
-        $('#pages').empty();
-        $('#czxx-wdzp').hide();
-        wokesAll();
-    })
-    $("#jxzp").click(function(){
-        $('#all').empty();
-        $('#czxx-wdzp').hide();
-        $('#pages').empty();
-        wokesJx();
-    })
-    $("#rmzp").click(function(){
-        $('#all').empty();
-        $('#czxx-wdzp').hide();
-        $('#pages').empty();
-        wokesRm();
-    })
-    $("#wdzp").click(function(){
-        $('#all').empty();
-        $('#pages').empty();
-        wokesWd();
+//密码更改
+function dqzhmmgg(){
+    var mm=$('#dlmm-xmm').val();
+    var qrmm=$('#dlmm-qrxmm').val();
+    if (mm==null||mm==''||qrmm==null||qrmm=='') {
+        $('#xmm-ts').attr("value", "请输入密码");
+    } if (mm!=qrmm) {
+        $('#xmm-ts').attr("value", "两次输入密码不一致");
+    } if (mm.length<8) {
+        $('#xmm-ts').attr("value", "密码须由8-16个字符或数字组成");
+    } else {
+        $.ajax({
+            type:'get',
+            url:'../js/works.json',
+            cache:false,
+            async:false,
+            data:{
+                mm:mm,
+                userid:userid
+            }
+        }).done(function(data){
+                console.log(data.content);//返回验证结果
+                if (true) {
+                    $('#dlmm-wcbd').show();    
+                    $('#dlmm-szxmm').hide();
+                    $('.dlmm-two').removeClass('sjhxg-con-xz');
+                    $('.dlmm-three').addClass('sjhxg-con-xz');
+                } else {
+                     $('#xmm-ts').attr("value", "密码输入错误，请重新输入");
+                }
+                // $("#dlmm-ts").attr("src",data.tpdz);
+                // $("#avarimgs").attr("src",data.tpdz);
+                // $("#txlg-img").attr("src",data.tpdz);
+                
+            })
+    }
+}
+//密码修改验证
+function dlmmsjhyz(){
+    var tel=$('#dlmm-sjh').val();
+    var yzm=$('#dlmm-yzm').val();
+    var p1=/^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
+         //(p1.test(theinput));
+         if (tel==null||tel=='') {
+            $('#dlmmsjh-ts').attr("value", "手机号码不能为空！");
+        } else if(p1.test(tel)==false) {  
+            $('#dlmmsjh-ts').attr("value", "请输入正确的手机号码！");
+        } else if (yzm.length!=6) {
+            $('#dlmmsjh-ts').attr("value", "验证码格式错误"); 
+        } else {//console.log(1)
+            $('#dlmmsjh-ts').attr("value", "");      
+            $.ajax({
+                type:'get',
+                url:'/bcbb/js/works.json',
+                cache:false,
+                async:false,
+                data:{
+                    jbsj:tel,
+                    sjyzm:yzm
+                }
+            }).done(function(data){
+                console.log(data.content);//返回验证结果
+                if (true) {   
+                    $('#dlmm-szxmm').show();
+                    $('#dlmm-wj').hide(); 
+                    $('.dlmm-one').removeClass('sjhxg-con-xz');
+                    $('.dlmm-two').addClass('sjhxg-con-xz');
+                } else {
+                     $('#dlmmsjh-ts').attr("value", "手机号或验证码不正确！");
+                }
+                // $("#dlmm-ts").attr("src",data.tpdz);
+                // $("#avarimgs").attr("src",data.tpdz);
+                // $("#txlg-img").attr("src",data.tpdz);
+                
+            })
+    }
+}
+$('.works-selt li').click(function(){
+   // $('.works-selt li').addClass('cur');
+   $('.works-selt li').removeClass("cur");
+   $(this).addClass("cur");
+});
+$("#qbzp").click(function(){
+   $('#all').empty();
+   $('#pages').empty();
+   $('#czxx-wdzp').hide();
+   wokesAll();
+})
+$("#jxzp").click(function(){
+    $('#all').empty();
+    $('#czxx-wdzp').hide();
+    $('#pages').empty();
+    wokesJx();
+})
+$("#rmzp").click(function(){
+    $('#all').empty();
+    $('#czxx-wdzp').hide();
+    $('#pages').empty();
+    wokesRm();
+})
+$("#wdzp").click(function(){
+    $('#all').empty();
+    $('#pages').empty();
+    wokesWd();
         // wokesYfb('#all');
-    })
+})
 
 ////我的作品
 $("#grzp").click(function(){
@@ -1015,7 +1267,7 @@ $("#grzp").click(function(){
     $(".content-grzl").hide();
     $('.wfb').removeClass("xz");
     $('.yfb').addClass("xz");
-        $('#pages').empty();
+    $('#pages').empty();
     $('.content-zp').empty();
     wokesYfb('.content-zp');//
 })
@@ -1023,7 +1275,7 @@ $("#grzp").click(function(){
 $("#sczp").click(function(){
     $(".zpfbqk").hide();
     $(".content-grzl").hide();
-        $('#pages').empty();
+    $('#pages').empty();
     $('.content-zp').empty();
     wokesSczp();
 })
@@ -1033,7 +1285,7 @@ $("#grzl").click(function(){
     $('.content-zp').empty();
     $(".content-grzl").show();
     $("#jczl-xs").show();
-        $('#pages').empty();
+    $('#pages').empty();
     $("#jczl-xg").hide();
     grzlxs();
     // wokesSczp();
@@ -1081,6 +1333,10 @@ $("#zlbc").click(function(){
         // var summary=$(this).val();
         yzsjh('#xsjh','#xsjhts');
     });
+   $("#bd-srsjh").bind('input propertychange',function () {
+        // var summary=$(this).val();
+        yzsjh('#bd-srsjh','#bdsj-ts');
+    });
  //   
  $("#ysjyzm").bind('input propertychange',function () {
         // var summary=$(this).val();
@@ -1096,6 +1352,7 @@ $("#sjh-qx").click(function(){
     $('#bdxsj').hide();
     $('#wcsjbd').hide();
     $('#jcsjbd').show();
+    $('.header').show();
     $(".two").removeClass("sjhxg-con-xz");
     $(".two div").removeClass("sjhxg-con-xz1");
     $(".three").removeClass("sjhxg-con-xz");
@@ -1105,16 +1362,33 @@ $("#sjh-qx").click(function(){
     $("#ggxjh input").val("");
     $(".xyb-sjjb").attr('id','');
     $(".xyb-sjxb").attr('id','');
-    $('#jbsj-hqyzm').attr("disabled",false);
-    $('#jbsj-hqyzm').text("获取验证码");
     // $("#jczl-xg").hide();
 })
-
-
-$("#sjh").click(function(){
-    $('#ggxjh').show();
+//关闭手机bd
+$("#bdsjh-qx").click(function(){
+    $('#bd-sjhbd').hide();
+    $('#bdsj-wcbd').hide();
+    $('#bdsj-sj').show();
+    $('.header').show();
+    $(".bdsj-two").removeClass("sjhxg-con-xz");
+    $(".bdsj-two div").removeClass("sjhxg-con-xz1");
+    $(".bdsj-one").addClass("sjhxg-con-xz");
+    $(".bdsj-one div").addClass("sjhxg-con-xz1");
+    $("#bd-sjhbd input").val("");
     // $("#jczl-xg").hide();
-}) 
+})
+$("#bdsj-btn").click(function(){
+    $('#bd-sjhbd').hide();
+    $('#bdsj-wcbd').hide();
+    $('#bdsj-sj').show();
+    $('.header').show();
+    $(".bdsj-two").removeClass("sjhxg-con-xz");
+    $(".bdsj-two div").removeClass("sjhxg-con-xz1");
+    $(".bdsj-one").addClass("sjhxg-con-xz");
+    $(".bdsj-one div").addClass("sjhxg-con-xz1");
+    $("#bd-sjhbd input").val("");
+    // $("#jczl-xg").hide();
+})
 
 //获取手机验证码
 $("#jbsj-hqyzm").click(function(){
@@ -1145,16 +1419,13 @@ $(".modal-txxg-txbc").click(function(){
     grtxbc();
 }) 
 
-//更换微信好
-$("#wxh").click(function(){
-    $('#ghwxh').show();
-}) 
 
 
 $(".wxh-qx").click(function(){
     $('#ghwxh').hide();
     $('#wxh-wcbd').hide();
     $('#wxh-cxbd').hide();
+    $('.header').show();
     $('#wxh-jcbd').show();
     $(".two").removeClass("sjhxg-con-xz");
     $(".two div").removeClass("sjhxg-con-xz1");
@@ -1163,7 +1434,7 @@ $(".wxh-qx").click(function(){
     $(".one").addClass("sjhxg-con-xz");
     $(".one div").addClass("sjhxg-con-xz1");
     $("#ggxjh input").val("");
-    $(".sjhxg-con-xyb").attr('id','');
+    // $(".sjhxg-con-xyb").attr('id','');
     $("#jczl-xg").hide();
 })
 
@@ -1195,7 +1466,7 @@ $("#ysjhzc").click(function(){
 $("#sjzc-sjh").bind('input propertychange',function () {
         // var summary=$(this).val();
         yzsjh('#sjzc-sjh','#sjzc-ts');
-    });
+});
 
 $("#sjzc").click(function(){
     sjzcqk();
@@ -1203,7 +1474,7 @@ $("#sjzc").click(function(){
 
 $("#sjzc-qws").click(function(){
     // $('#zhzcdl').hide();
-    $(location).attr('href', './personal_center.html?top=0');
+    $(location).attr('href', '/bcbb/creative_centre/personal_center.html?top=0');
     //  $(".zpfbqk").hide();
     // $('.content-zp').empty();
     // $(".content-grzl").show();
@@ -1249,6 +1520,8 @@ $("#zx-qzc").click(function(){
     $('#sjzc-zc').show();
     $('#sjzc-sjhzc').show();
     $('#sjdl-dl').hide();
+    $('#tpyz-zcxs').empty();
+    tpyz('tpyz-zcxs','tpyz-zcts');
 })
 $("#dl-wxsm").click(function(){
     $('#wxh-dl').show();
@@ -1261,6 +1534,8 @@ $("#thsjhdl").click(function(){
 $("#dl-dxdl").click(function(){
     $('#dl-sjzhdl').hide();
     $('#sjdl-sjhdl').show();
+    $('#tpyz-dlxs').empty();
+    tpyz('tpyz-dlxs','tpyz-dlts');
 })
 $("#dl-zhdl").click(function(){
     $('#dl-sjzhdl').show();
@@ -1270,6 +1545,8 @@ $("#zh-qzc").click(function(){
     $('#sjzc-zc').show();
     $('#sjzc-sjhzc').show();
     $('#sjdl-dl').hide();
+    $('#tpyz-zcxs').empty();
+    tpyz('tpyz-zcxs','tpyz-zcts');
 })
 $("#zh-wxsm").click(function(){
     $('#wxh-dl').show();
@@ -1298,7 +1575,109 @@ $("#sjdl-dxdl").click(function(){
     sjdxdl()
 })   
 //验证手机号是否正确     
-   $("#sjdl-sjh").bind('input propertychange',function () {
+$("#sjdl-sjh").bind('input propertychange',function () {
         // var summary=$(this).val();
         yzsjh('#sjdl-sjh','#sjdl-ts');
     });
+
+//合成事件 hover()  
+$(".czxx").hover(function (){  
+    $(".create-hover-content").show();  
+},function (){  
+    $(".create-hover-content").hide();  
+});  
+
+$("#bdsj-xyb").click(function(){
+    bdsjqk();
+})  
+
+$("#mmxg-qx").click(function(){
+    $('.header').show();
+    $('#dlmmgh').hide();
+    $('.dlmm-three').removeClass('sjhxg-con-xz');
+    $('.dlmm-two').removeClass('sjhxg-con-xz');
+    $('.dlmm-one').addClass('sjhxg-con-xz');
+    $('#dlmm-wcbd').hide();    
+    $('#dlmm-szxmm').hide();
+    $('#dlmm-yz').hide();    
+    $('#dlmm-yz').show();      
+    $('.sjhxg-con-jb input').attr('value','');  
+})  
+$("#xyb-mmyz").click(function(){
+    dqzhmmyz();
+})  
+
+//密码显示
+$("#mmxs-xmm").click(function(){
+    var type=$("#dlmm-xmm").prop("type");
+    if (type=='password') {
+        $("#dlmm-xmm").prop("type","text");
+        $("#mmxs-xmm").attr("src","/bcbb/images/look.png");
+
+    } else {
+        $("#mmxs-xmm").attr("src","/bcbb/images/no-look.png");
+        $("#dlmm-xmm").prop("type","password");
+    }
+})
+$("#mmxs-qrxmm").click(function(){
+    var type=$("#dlmm-qrxmm").prop("type");
+    if (type=='password') {
+        $("#dlmm-qrxmm").prop("type","text");
+        $("#mmxs-qrxmm").attr("src","/bcbb/images/look.png");
+
+    } else {
+        $("#mmxs-qrxmm").attr("src","/bcbb/images/no-look.png");
+        $("#dlmm-qrxmm").prop("type","password");
+    }
+})
+$("#yhmm-sfkj").click(function(){
+    var type=$("#yhmm").prop("type");
+    if (type=='password') {
+        $("#yhmm").prop("type","text");
+        $("#yhmm-sfkj").attr("src","/bcbb/images/look.png");
+
+    } else {
+        $("#yhmm-sfkj").attr("src","/bcbb/images/no-look.png");
+        $("#yhmm").prop("type","password");
+    }
+}) 
+$("#yhmm-kj").click(function(){
+    var type=$("#yhmm-mm").prop("type");
+    if (type=='password') {
+        $("#yhmm-mm").prop("type","text");
+        $("#yhmm-kj").attr("src","/bcbb/images/look.png");
+
+    } else {
+        $("#yhmm-kj").attr("src","/bcbb/images/no-look.png");
+        $("#yhmm-mm").prop("type","password");
+    }
+}) 
+$("#xyb-mmgg").click(function(){
+    dqzhmmgg();
+}) 
+
+$("#mmwc-btn").click(function(){
+    $('.header').show();
+    $('#dlmmgh').hide();
+    $('.dlmm-three').removeClass('sjhxg-con-xz');
+    $('.dlmm-two').removeClass('sjhxg-con-xz');
+    $('.dlmm-one').addClass('sjhxg-con-xz');
+    $('#dlmm-wcbd').hide();    
+    $('#dlmm-szxmm').hide();
+    $('#dlmm-wj').show();    
+    $('#dlmm-yz').hide();    
+    $('.sjhxg-con-jb input').attr('value','');
+}) 
+
+$("#dlmm-sjh").bind('input propertychange',function () {
+        // var summary=$(this).val();
+        yzsjh('#dlmm-sjh','#dlmmsjh-ts');
+});
+$("#dlmm-wjmm").click(function(){
+    $('#dlmm-yz').hide();    
+    $('#dlmm-wj').show();    
+}) 
+//密码修改验证
+$("#dlmmsjh-xyb").click(function(){
+    dlmmsjhyz();
+}) 

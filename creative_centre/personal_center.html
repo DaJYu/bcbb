@@ -62,8 +62,11 @@ background-size: 100%;
                     <li><a href="../">首页</a></li>
                     <li><a href="#">课程介绍</a></li>
                     <li><a href="#">教学模式</a></li>
-                    <li><a href="../creative_centre">创作中心</a></li>
-
+                    <li class="czxx"><a href="../creative_centre" class="czxxsy">创作中心</a>
+                        <div class="f-pa create-hover-content">
+                            <a href="/scratch" class="hover-link ga-click"><span>Scratch 3.0 Beta</span></a>
+                        </div>
+                    </li>
                     <li class="zc"><a href="#">登录&nbsp;|&nbsp;注册</a></li>
                     <li class="txlg"><img src="../images/t1.jpg" class="txlg-img" id="txlg-img"></li>
                 </ul>
@@ -93,8 +96,8 @@ background-size: 100%;
                         <div id="tpyz-zcxs"></div>
                         <input class="msg" id="tpyz-zcts"/>
                     </div>
-                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('sjzc-sjh','#sjzc-yzm')">获取验证码</button></label></div>
-                    <div class="mmsz"><input type="password" name="" placeholder="请设置您的登录密码" id="yhmm"><img src="../images/look.png"></div>
+                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('#sjzc-sjh','#sjzc-yzm')">获取验证码</button></label></div>
+                    <div class="mmsz"><input type="password" name="" placeholder="请设置您的登录密码" id="yhmm"><img src="../images/no-look.png" id="yhmm-sfkj"></div>
                     <input type="" name="" id="sjzc-ts" readonly="readonly">
                 </div>
                 <div class="sjhxg-con-xyb" id="sjzc">注册</div>
@@ -126,7 +129,7 @@ background-size: 100%;
             <!-- END -->
         </div>
         <!-- END -->
-         <!-- BEGIN -->
+        <!-- BEGIN -->
         <div class="sjhxg-con" id="sjdl-dl" style="margin-top: 23px;">
             <!-- BEGIN -->
             <div style="height: 30px">
@@ -156,11 +159,11 @@ background-size: 100%;
                         <div id="tpyz-dlxs"></div>
                         <input class="msg" id="tpyz-dlts"/>
                     </div>
-                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjdl-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjdl-yzm" onclick="invokeSettime('sjdl-sjh','#sjdl-yzm')">获取验证码</button></label></div>
+                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjdl-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjdl-yzm" onclick="invokeSettime('#sjdl-sjh','#sjdl-yzm')">获取验证码</button></label></div>
                     <input class="ts" type="" name="" id="sjdl-ts" readonly="readonly" style="width: 70%">
                     <span class="dl-zhdl" id="dl-zhdl">使用账号密码登录</span>
                 </div>
-                <div class="sjhxg-con-xyb dl" id="sjdl-dxdl" style="margin: 50px 0 8px;">登录</div>
+                <div class="sjhxg-con-xyb dls" id="sjdl-dxdl" style="margin: 50px 0 8px;">登录</div>
                 <p class="bq" id="zx-qzc" style="color: #31a2f2;">去注册></p>
                 <div class="zc-wxsm" id="dl-wxsm">
                     <img src="../images/weixin-tb.png">
@@ -188,7 +191,7 @@ background-size: 100%;
                     <input class="ts" type="" name="" id="zhdl-ts" readonly="readonly" style="width: 70%">
                     <span class="dl-zhdl" id="dl-dxdl">使用短信验证登录</span>
                 </div>
-                <div class="sjhxg-con-xyb dl" id="sjdl-zhdl" style="margin: 50px 0 8px;">登录</div>
+                <div class="sjhxg-con-xyb dls" id="sjdl-zhdl" style="margin: 50px 0 8px;">登录</div>
                 <p class="bq" id="zh-qzc" style="color: #31a2f2;">去注册></p>
                 <div class="zc-wxsm" id="zh-wxsm">
                     <img src="../images/weixin-tb.png">
@@ -222,37 +225,37 @@ background-size: 100%;
                 <label class="user"><div class="user-pic">修改头像</div></label>
             </label>
             <div  class="modal-fade" id="grtxbj">
-             <div class="kd container modal-txxg">
-                 <h2>头像修改</h2>
-                 <div class="modal-txxg-tb">
-                     <div class="modal-txxg-tb-sc">
-                         <img src="" class="grtx-img" id="avarimgs">
-                         <div class="modal-txxg-tb-bdsc">
+               <div class="kd container modal-txxg">
+                   <h2>头像修改</h2>
+                   <div class="modal-txxg-tb">
+                       <div class="modal-txxg-tb-sc">
+                           <img src="" class="grtx-img" id="avarimgs">
+                           <div class="modal-txxg-tb-bdsc">
                             <span>本地上传</span>
                             <input type="file" name="pclogo" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*">
                         </div>
                     </div>
                     <div class="modal-txxg-tb-tj">
-                     <p>推荐头像</p>
-                     <ul>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                         <li><img src="./"></li>
-                     </ul>
-                 </div>
-             </div>
-             <span class="modal-txxg-txbc">保存</span><br><span class="modal-txxg-qxxg">取消</span>
-         </div>
-     </div>
- </div>
- <p id="grtx-nc"></p>
- <span id="grtx-qm"></span><br>
- <a href="#"><img src="../images/kscz-btn.png" class="grtx-kscz"></a>
+                       <p>推荐头像</p>
+                       <ul>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                           <li><img src="./"></li>
+                       </ul>
+                   </div>
+               </div>
+               <span class="modal-txxg-txbc">保存</span><br><span class="modal-txxg-qxxg">取消</span>
+           </div>
+       </div>
+   </div>
+   <p id="grtx-nc"></p>
+   <span id="grtx-qm"></span><br>
+   <a href="#"><img src="../images/kscz-btn.png" class="grtx-kscz"></a>
 </div>
 </div>
 
@@ -388,12 +391,12 @@ background-size: 100%;
                         </div>
                         <div class="content-jczl">
                             <div class="content-jczl-aq">
-                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>常用手机&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-cysj" readonly="readonly"></label><div class="aq-bdxg" id="sjh"></div></div>
-                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>微信&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-wx" readonly="readonly"></label><div class="aq-bdxg" id="wxh"></div></div>
-                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title">Q&nbsp;Q&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-qq" readonly="readonly"></label><div class="aq-bdxg" id="qqh"></div></div>
-                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title">微博&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-wb" readonly="readonly"></label><div class="aq-bdxg" id="wbh"></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>常用手机&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-cysj" readonly="readonly"></label><div class="aq-bdxg bdsj-sjh" id=""></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>微信&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-wx" readonly="readonly"></label><div class="aq-bdxg wxh" id=""></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title">Q&nbsp;Q&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-qq" readonly="readonly"></label><div class="aq-bdxg qqh" id=""></div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title">微博&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-wb" readonly="readonly"></label><div class="aq-bdxg wbh" id=""></div></div>
                                 <!-- <div class="content-jczl-jbxx-anq"><label class="jbxx-title">邮箱&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-yx"></label><div class="aq-bdxg"></div>立即绑定</div> -->
-                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>登录密码&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-mm" readonly="readonly"></label><div class="aq-bdxg" id="zhmm">修改</div></div>
+                                <div class="content-jczl-jbxx-anq"><label class="jbxx-title"><span>*</span>登录密码&nbsp;:</label><label class="jbxx-anquan"><input type="" name="" id="aq-mm" readonly="readonly"></label><div class="aq-bdxg zhmm" id="">修改</div></div>
                             </div>
                         </div>
 
@@ -402,7 +405,7 @@ background-size: 100%;
                             <div class="kd container sjhxg">
                                 <div class="sjhxg-con">
                                     <div style="height: 50px">
-                                     <ul>
+                                       <ul>
                                         <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
                                         <li class="two"><div class="">2</div></li>
                                         <li class="three"><div class="">3</div></li>
@@ -452,73 +455,216 @@ background-size: 100%;
                     </div>
                     <!-- END -->
 
-
-                    <!--modal  BEGIN 微信号更换-->
-                    <div  class="modal-fade" id="ghwxh">
+                    <!--modal  BEGIN 手机号绑定-->
+                    <div  class="modal-fade" id="bd-sjhbd">
                         <div class="kd container sjhxg">
                             <div class="sjhxg-con">
                                 <div style="height: 50px">
-                                 <ul>
-                                    <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
-                                    <li class="two"><div class="">2</div></li>
-                                    <li class="three"><div class="">3</div></li>
+                                   <ul>
+                                    <li class="bdsj-one wd-f sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
+                                    <li class="bdsj-two wd-f"><div class="">2</div></li>
                                 </ul> 
                             </div>
                             <!-- BEGIN -->
-                            <div class="jcbd" id="wxh-jcbd">
-                                <h2>解除绑定</h2>
-                                <div class="sjhxg-con-jb img">
-                                    <img src="../images/weixin.png">
-                                    <p>请打开微信扫一扫</p>
+                            <div class="" id="bdsj-sj">
+                                <h2>绑定手机号</h2>
+                                <div class="sjhxg-con-jb">
+                                    <p>手机号</p>
+                                    <div class="sjhxg-con-jb-sj">
+                                        <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输手机号" id="bd-srsjh"></label>
+                                    </div>
+                                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="bd-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="bd-hqyzm" onclick="invokeSettime('#bd-sjh','#bd-hqyzm')">获取验证码</button></label></div>
+                                    <input class="ts" type="" name="" id="bdsj-ts" readonly="readonly">
                                 </div>
-                                <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div>
-                            </div>
-                            <!--END  -->
-                            <!-- BEGIN -->
-                            <div class="bdxh" id="wxh-cxbd">
-                                <h2>绑定新微信号</h2>
-                                <div class="sjhxg-con-jb img">
-                                    <img src="../images/weixin.png">
-                                    <p>请用新微信号扫描</p>
-                                </div>
-                                <div class="sjhxg-con-xyb top xyb-wxxb" id="wxh-bd">下一步</div>
+                                <div class="sjhxg-con-xyb dls" id="bdsj-xyb" style="margin-bottom: 8px;">下一步</div>
                             </div>
                             <!-- END -->
                             <!-- BEGIN -->
-                            <div class="wcbd" id="wxh-wcbd">
+                            <div class="wcbd" id="bdsj-wcbd">
                                 <h2>完成绑定</h2>
                                 <div class="sjhxg-con-jb img">
-                                    <img src="../images/duihao.png"><br>
+                                    <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
                                     <input type="" name="" id="wcts" readonly="readonly">
                                 </div>
-                                <div class="sjhxg-con-xyb xyb-wxwc" id="wc-">完成</div>
+                                <div class="sjhxg-con-xyb xyb-sjwc" id="bdsj-btn">完成</div>
                             </div>
                             <!-- END -->
-                            <p class="gb wxh-qx" id=wxh-qx">取消更换</p>
+                            <p class="bq" id="bdsjh-qx">取消更换</p>
                         </div>
                     </div>
                 </div>
                 <!-- END -->
 
-            </div>       
-        </div>
-    </div>
-    <!-- Promo block END -->
-
-    <!-- BEGIN FOOTER -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <!-- BEGIN COPYRIGHT -->
-                <div class="text-center">
-                    <p class="powered" style="color: #fff;">Copyright &copy; 2018 编程宝贝</p>
+                <!--modal  BEGIN 微信号更换-->
+                <div  class="modal-fade" id="ghwxh">
+                    <div class="kd container sjhxg">
+                        <div class="sjhxg-con">
+                            <div style="height: 50px">
+                               <ul>
+                                <li class="one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
+                                <li class="two"><div class="">2</div></li>
+                                <li class="three"><div class="">3</div></li>
+                            </ul> 
+                        </div>
+                        <!-- BEGIN -->
+                        <div class="jcbd" id="wxh-jcbd">
+                            <h2>解除绑定</h2>
+                            <div class="sjhxg-con-jb img">
+                                <img src="../images/weixin.png">
+                                <p>请打开微信扫一扫</p>
+                            </div>
+                            <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div>
+                        </div>
+                        <!--END  -->
+                        <!-- BEGIN -->
+                        <div class="bdxh" id="wxh-cxbd">
+                            <h2>绑定新微信号</h2>
+                            <div class="sjhxg-con-jb img">
+                                <img src="../images/weixin.png">
+                                <p>请用新微信号扫描</p>
+                            </div>
+                            <div class="sjhxg-con-xyb top xyb-wxxb" id="wxh-bd">下一步</div>
+                        </div>
+                        <!-- END -->
+                        <!-- BEGIN -->
+                        <div class="wcbd" id="wxh-wcbd">
+                            <h2>完成绑定</h2>
+                            <div class="sjhxg-con-jb img">
+                                <img src="../images/duihao.png"><br>
+                                <input type="" name="" id="wcts" readonly="readonly">
+                            </div>
+                            <div class="sjhxg-con-xyb xyb-wxwc" id="wc-">完成</div>
+                        </div>
+                        <!-- END -->
+                        <p class="gb wxh-qx" id=wxh-qx">取消更换</p>
+                    </div>
                 </div>
-                <!-- END COPYRIGHT -->
             </div>
+            <!-- END -->
+
+                <!--modal  BEGIN 绑定微信号-->
+                <div  class="modal-fade" id="bdwxh">
+                    <div class="kd container sjhxg">
+                        <div class="sjhxg-con">
+                            <div style="height: 50px">
+                               <ul>
+                                    <li class="bdwx-one wd-f sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
+                                    <li class="bdwx-two wd-f"><div class="">2</div></li>
+                            </ul> 
+                        </div>
+                        <!-- BEGIN -->
+                        <div class="jcbd" id="wxh-jcbd">
+                            <h2>绑定微信号 </h2>
+                            <div class="sjhxg-con-jb img">
+                                <img src="../images/weixin.png">
+                                <p>请打开微信扫一扫</p>
+                            </div>
+                            <div class="sjhxg-con-xyb top xyb-wxjb" id="wxh-jb">下一步</div>
+                        </div>
+                        <!--END  -->
+                        <!-- BEGIN -->
+                        <div class="wcbd" id="wxh-wcbd">
+                            <h2>完成绑定</h2>
+                            <div class="sjhxg-con-jb img">
+                                <img src="../images/duihao.png"><br>
+                                <input type="" name="" id="wcts" readonly="readonly">
+                            </div>
+                            <div class="sjhxg-con-xyb xyb-wxwc" id="wc-">完成</div>
+                        </div>
+                        <!-- END -->
+                        <p class="gb wxh-qx" id=wxbd-qx">取消更换</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END -->
+
+                        <!--modal  BEGIN 密码更换-->
+                        <div  class="modal-fade" id="dlmmgh">
+                            <div class="kd container sjhxg">
+                                <div class="sjhxg-con">
+                                    <div style="height: 50px">
+                                       <ul>
+                                        <li class="dlmm-one sjhxg-con-xz"><div class="sjhxg-con-xz1">1</div></li>
+                                        <li class="dlmm-two"><div class="">2</div></li>
+                                        <li class="dlmm-three"><div class="">3</div></li>
+                                    </ul> 
+                                </div>
+                                <!-- BEGIN -->
+                                <div class="jcbd" id="dlmm-yz">
+                                    <h2>身份验证</h2>
+                                    <div class="sjhxg-con-jb">
+                                        <p>用户账号</p>
+                                        <div class="sjhxg-con-jb-sj">
+                                            <label class="sjh"><input type="tel" name="" placeholder="" id="dlmm-zh" readonly="readonly"></label>
+                                        </div>
+                                        <div class="mmsz"><input type="password" name="" placeholder="输入新密码" id="yhmm-mm"><img src="../images/no-look.png" id="yhmm-kj"></div>
+                                        <input class="ts" type="" name="" id="dlmm-ts" readonly="readonly" style="width: 70%">
+                                        <span class="dl-zhdl wjmm" id="dlmm-wjmm">忘记密码</span>
+                                    </div>
+                                    <div class="sjhxg-con-xyb dls" id="xyb-mmyz">下一步</div>
+                                </div>
+                                <!--END  -->                                
+                            <!-- BEGIN -->
+                            <div class="yc" id="dlmm-wj">
+                                <h2>身份验证</h2>
+                                <div class="sjhxg-con-jb">
+                                    <p>手机号</p>
+                                    <div class="sjhxg-con-jb-sj">
+                                        <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输手机号" id="dlmm-sjh"></label>
+                                    </div>
+                                    <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="dlmm-yzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="dlmm-hqyzm" onclick="invokeSettime('#dlmm-sjh','#dlmm-hqyzm')">获取验证码</button></label></div>
+                                    <input class="ts" type="" name="" id="dlmmsjh-ts" readonly="readonly">
+                                </div>
+                                <div class="sjhxg-con-xyb dls" id="dlmmsjh-xyb" style="margin-bottom: 8px;">下一步</div>
+                            </div>
+                            <!-- END -->
+                                <!-- BEGIN -->
+                                <div class="bdxh" id="dlmm-szxmm">
+                                    <h2>设置新密码</h2>
+                                    <div class="sjhxg-con-jb" style="margin-top: 50px;">
+                                        <div class="mmsz"><input type="password" name="" placeholder="输入新密码" id="dlmm-xmm"><img src="../images/no-look.png" id="mmxs-xmm"></div>
+                                        <div class="mmsz"><input type="password" name="" placeholder="输入新密码" id="dlmm-qrxmm"><img src="../images/no-look.png" id="mmxs-qrxmm"></div>
+                                        <input class="ts" type="" name="" id="xmm-ts" readonly="readonly">
+                                    </div>
+                                    <p class="gb">密码要求至少包含字母、数字两项且长度为8-16位</p>
+                                    <div class="sjhxg-con-xyb dls" id="xyb-mmgg" style="margin-top: 50px;">下一步</div>
+                                </div>
+                                <!-- END -->
+                                <!-- BEGIN -->
+                                <div class="wcbd" id="dlmm-wcbd">
+                                    <h2>完成修改</h2>
+                                    <div class="sjhxg-con-jb img">
+                                        <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                                        <input type="" name="" id="wcts" readonly="readonly">
+                                    </div>
+                                    <div class="sjhxg-con-xyb xyb-sjwc" id="mmwc-btn">完成</div>
+                                </div>
+                                <!-- END -->
+                                <p class="gb" id="mmxg-qx">取消更换</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END -->
+
+        </div>       
+    </div>
+</div>
+<!-- Promo block END -->
+
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN COPYRIGHT -->
+            <div class="text-center">
+                <p class="powered" style="color: #fff;">Copyright &copy; 2018 编程宝贝</p>
+            </div>
+            <!-- END COPYRIGHT -->
         </div>
     </div>
-    <!-- END FOOTER -->
-    <a href="#promo-block" class="go2top scroll"><i class="fa fa-arrow-up"></i></a>
+</div>
+<!-- END FOOTER -->
+<a href="#promo-block" class="go2top scroll"><i class="fa fa-arrow-up"></i></a>
 
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.min.js"></script>

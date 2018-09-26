@@ -381,7 +381,7 @@ a:hover {
   width: 100%;
   min-height: 100px;
   padding: 0;
-  background: rgba(255,255,255,0.95);
+  /*background: rgba(255,255,255,0.95);*/
   /*box-shadow: 0 1px 4px rgba(228, 228, 228, 0.95);*/
   z-index: 9999;
 }
@@ -544,7 +544,7 @@ a:hover {
   padding: 19px 0 0;
   margin: 0;
   font: 400 18px "PT Sans Narrow", Arial, sans-serif;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .header-navigation li {
   float: left;
